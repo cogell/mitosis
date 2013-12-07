@@ -1,5 +1,5 @@
 module.exports = {
-  tmp: {
-    src: ['.tmp']
+  public: {
+    src: ['<%= dist %>']
   }
 }

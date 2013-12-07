@@ -1,16 +1,23 @@
 module.exports = function(grunt){
 
   grunt.registerTask('dev', [
-    'clean:tmp',
+    'clean:public',
+    'copy:index',
+    'copy:dependencies',
     'copy:js',
-    'sass:dev'
+    'copy:requirejs',
+    'sass:compile'
   ]);
 
-  grunt.registerTask('dev:server', [
-    'dev',
+  grunt.registerTask('dev:watch', [
     'watch'
   ]);
 
-  grunt.registerTask('default', ['dev:server'])
+  grunt.registerTask('build', [
+    'dev',
+    'requirejs'
+  ]);
+
+  grunt.registerTask('default', ['dev:watch'])
 
 }

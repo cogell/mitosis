@@ -9,6 +9,5 @@ app.use(express.static(__dirname + '/public'));
 
 // socket?
 
-
 app.listen(port);
 console.log('Express app started on port ' + port);

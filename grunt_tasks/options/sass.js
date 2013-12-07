@@ -2,7 +2,7 @@ module.exports = {
   options: {
     // includePaths: ''
   },
-  dev: {
+  compile: {
     options: {
       outputStyle: 'expanded',
       sourceComments: 'none'
