@@ -5,13 +5,13 @@ var port = 5000
 
 // config
 
-app.use(express.logger());
+// app.use(express.logger());
 app.use(express.static(__dirname + '/public'));
 
 // gen
-app.get('/', function(req, res){
-  res.sendfile('./public/index.html');
-});
+// app.get('/', function(req, res){
+//   res.sendfile('./public/index.html');
+// });
 
 // socket?
 
