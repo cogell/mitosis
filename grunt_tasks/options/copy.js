@@ -7,10 +7,11 @@ module.exports = {
     files: [{
       expand: true,
       dot: true,
-      cwd: 'bower_components',
+      cwd: '<%= bower %>',
       dest: '<%= dist %>/vendor',
       src: [
-        'jquery/jquery.js'
+        'jquery/jquery.js',
+        'bootstrap/dist/js/bootstrap.js'
       ]
     }]
   },

@@ -1,7 +1,4 @@
 module.exports = {
-  options: {
-    // includePaths: ''
-  },
   compile: {
     options: {
       outputStyle: 'expanded',

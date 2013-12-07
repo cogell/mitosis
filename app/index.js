@@ -6,6 +6,7 @@ var port = 5000
 // config
 app.use(express.logger());
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/static'));
 
 // socket?
 
