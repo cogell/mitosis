@@ -23,7 +23,8 @@ module.exports = function(grunt){
   var config = {
     pkg: grunt.file.readJSON('package.json'),
     app: 'client',
-    dist: 'app/public'
+    dist: 'app/public',
+    bower: 'bower_components'
   }
 
   // load in all the task options

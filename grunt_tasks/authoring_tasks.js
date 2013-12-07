@@ -6,10 +6,12 @@ module.exports = function(grunt){
     'copy:dependencies',
     'copy:js',
     'copy:requirejs',
+    'less:compileBS',
     'sass:compile'
   ]);
 
   grunt.registerTask('dev:watch', [
+    'dev',
     'watch'
   ]);
 
