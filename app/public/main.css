@@ -1,5 +1,16 @@
 header .navbar {
   margin-bottom: 0; }
 
+.post {
+  font-size: 1.6rem;
+  line-height: 1.6em; }
+  .post .header-img {
+    max-height: 400px;
+    overflow: hidden; }
+  .post p {
+    margin-bottom: 1.7em; }
+  .post blockquote p {
+    font-size: 1.4em; }
+
 html body {
-  background: white; }
+  font-size: 100%; }

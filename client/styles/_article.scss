@@ -1,0 +1,14 @@
+.post {
+  font-size: 1.6rem;
+  line-height: 1.6em;
+  .header-img {
+    max-height: 400px;
+    overflow: hidden;
+  }
+  p {
+    margin-bottom: 1.7em;
+  }
+  blockquote p {
+    font-size: 1.4em;
+  }
+}
