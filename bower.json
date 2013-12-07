@@ -1,0 +1,26 @@
+{
+  "name": "challenge",
+  "version": "0.0.0",
+  "authors": [
+    "B. Cedric Cogell <cedric.cogell@gmail.com>"
+  ],
+  "description": "make comments come alive, client",
+  "main": "client/main.js",
+  "keywords": [
+    "backbone",
+    "marionette"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "requirejs": "~2.1.9"
+  }
+}

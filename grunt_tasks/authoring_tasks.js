@@ -1,8 +1,8 @@
 module.exports = function(grunt){
 
   grunt.registerTask('dev', [
-    // clean?
-    // compile sass
+    'clean:tmp',
+    'copy:js',
     'sass:dev'
   ]);
 
