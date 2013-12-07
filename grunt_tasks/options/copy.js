@@ -11,7 +11,8 @@ module.exports = {
       dest: '<%= dist %>/vendor',
       src: [
         'jquery/jquery.js',
-        'bootstrap/dist/js/bootstrap.js'
+        'bootstrap/dist/js/bootstrap.js',
+        'masonry/masonry.js'
       ]
     }]
   },
