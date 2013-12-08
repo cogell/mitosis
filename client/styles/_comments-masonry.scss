@@ -1,0 +1,15 @@
+.packery-container {
+  width: 100%;
+
+  .item {
+    width: 200px;
+    height: 300px;
+
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #ddd;
+
+    font-size: 1.5rem;
+  }
+
+}

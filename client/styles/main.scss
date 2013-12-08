@@ -3,9 +3,16 @@
 @import 'header';
 @import 'article';
 @import 'comments';
+@import 'comments-masonry';
 
 
 // Global Styles
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   body {
     font-size: 100%;

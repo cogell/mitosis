@@ -12,7 +12,15 @@ module.exports = {
       src: [
         'jquery/jquery.js',
         'bootstrap/dist/js/bootstrap.js',
-        'masonry/masonry.js'
+        'jquery-bridget/jquery.bridget.js',
+
+        'packery/js/packery.js',
+        'packery/js/packer.js',
+        'packery/js/item.js',
+        'packery/js/rect.js',
+        'outlayer/outlayer.js',
+        'get-size/get-size.js',
+        'classie/classie.js'
       ]
     }]
   },

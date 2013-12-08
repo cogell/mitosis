@@ -14,3 +14,6 @@ I'm just building up my work space and getting the bare bones node server and cl
 
 ###
 always be knolling
+
+## Running TODOs
+- dry up tracking dependencies in copy.js and require_config.js
