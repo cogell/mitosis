@@ -8,7 +8,7 @@ require(['require_config'], function(){
       var pckry = new Packery( cont, {
         // options
         itemSelector: '.item',
-        gutter: 1
+        gutter: 0
       });
 
     });

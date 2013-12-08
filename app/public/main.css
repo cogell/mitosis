@@ -34,13 +34,45 @@ header .navbar {
 
 .packery-container {
   width: 100%; }
-  .packery-container .item {
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    background: transparent;
-    border: 1px solid #dddddd;
+  .packery-container .item, .packery-container .comment {
+    position: relative;
+    width: 10%;
+    height: 10%;
+    padding: 10px;
+    background: #ede8df;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     font-size: 1.5rem; }
+    .packery-container .item .comment-count, .packery-container .comment .comment-count {
+      position: absolute;
+      bottom: 10px; }
+      .packery-container .item .comment-count p, .packery-container .comment .comment-count p {
+        margin: 0; }
+    .packery-container .item .comment-expand, .packery-container .comment .comment-expand {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer; }
+  .packery-container .big {
+    padding: 20px;
+    width: 50%;
+    height: 300px;
+    background: #ff434c;
+    color: white;
+    font-size: 3em; }
+  .packery-container .large {
+    padding: 20px;
+    width: 33.33333%;
+    height: 200px;
+    background: #30394f;
+    color: white;
+    font-size: 2em; }
+  .packery-container .medium {
+    width: 20%;
+    height: 100px;
+    background: #6aceeb;
+    font-size: 1.5em; }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;
