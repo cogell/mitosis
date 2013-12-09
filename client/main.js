@@ -5,7 +5,7 @@ require(['require_config'], function(){
       console.log('dom ready and js coming in via require');
 
       var cont = $('.packery-container')[0];
-      var pckry = new Packery( cont, {
+      window.pckry = new Packery( cont, {
         // options
         itemSelector: '.item',
         gutter: 0

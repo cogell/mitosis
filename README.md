@@ -15,5 +15,10 @@ I'm just building up my work space and getting the bare bones node server and cl
 ###
 always be knolling
 
-## Running TODOs
+## Running Ideas and Todos
 - dry up tracking dependencies in copy.js and require_config.js
+
+- add filtering to comments for chrono and popularity?
+
+- being said right now on the top, like a news ticker!
+- can only start a new conversation if your account has enough karma (like stackoverflow?)
