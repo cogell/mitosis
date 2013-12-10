@@ -14,6 +14,10 @@
     files: ['<%= app %>/**/*.js'],
     tasks: ['copy:js']
   },
+  html: {
+    files: ['<%= app %>/apps/**/*.html'],
+    tasks: ['copy:html']
+  },
   index: {
     files: ['<%= app %>/assets/index.html'],
     tasks: ['copy:index']

@@ -1,21 +1,33 @@
 h1 {
   text-transform: uppercase; }
 
-header .navbar {
-  margin-bottom: 0; }
+#header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%; }
+  #header .navbar {
+    margin-bottom: 0; }
 
 .post {
   font-size: 1.6rem;
   line-height: 1.6em; }
   .post .header-img {
+    position: fixed;
+    top: 0;
     max-height: 400px;
     overflow: hidden; }
-  .post header {
-    margin-bottom: 1.7em; }
-  .post p {
-    margin-bottom: 1.7em; }
-  .post blockquote p {
-    font-size: 1.4em; }
+  .post .content {
+    background: white;
+    position: relative;
+    z-index: 1;
+    margin-top: 460px; }
+    .post .content header {
+      margin-bottom: 1.7em; }
+    .post .content p {
+      margin-bottom: 1.7em; }
+    .post .content blockquote p {
+      font-size: 1.4em; }
 
 .comments {
   margin-bottom: 20em; }

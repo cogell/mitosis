@@ -1,4 +1,9 @@
-header{
+#header{
+  position: fixed;
+  z-index: $top;
+  top: 0;
+  width: 100%;
+
   .navbar{
     margin-bottom: 0;
   }
