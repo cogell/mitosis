@@ -5,21 +5,41 @@ define(function(require){
   return App.module('Entities', function(Entities){
 
     Entities.Comment = Backbone.Model.extend({
-      url: 'comments/'
+      url: '/api/comments/'
     });
 
     Entities.Comments = Backbone.Collection.extend({
-      url: 'comments/'
+      url: function(){
+        if (this.forId){
+          return '/api/comments/for/' + this.forId
+        }
+      },
+      initialize: function(options){
+        this.forId = options.forId
+      }
+
     });
 
-    App.on('entities:comments', function(id){
+    var API = {
+      getCommentEntities: function(id){
+        var comments = new Entities.Comments({forId: id});
+        var defer = $.Deferred();
 
-      // make a defer object
+        comments.fetch({
+          success: function(data){
+            defer.resolve(data);
+          },
+          error: function(err){
+            defer.resolve(undefined);
+          }
+        });
 
-      // define events on defer object
+        return defer.promise();
+      }
+    };
 
-      // return defer.promise
-
+    App.reqres.setHandler('entities:comments', function(id){
+      return API.getCommentEntities(id);
     });
 
   });

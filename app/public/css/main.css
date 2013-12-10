@@ -21,7 +21,8 @@ h1 {
     background: white;
     position: relative;
     z-index: 1;
-    margin-top: 460px; }
+    margin-top: 460px;
+    padding-bottom: 40px; }
     .post .content header {
       margin-bottom: 1.7em; }
     .post .content p {
@@ -30,6 +31,8 @@ h1 {
       font-size: 1.4em; }
 
 .comments {
+  position: relative;
+  background: white;
   margin-bottom: 20em; }
   .comments .new-form {
     margin-bottom: 10em; }
@@ -92,3 +95,6 @@ h1 {
 
 html body {
   font-size: 100%; }
+
+#main {
+  border-bottom: 1px solid #cccccc; }

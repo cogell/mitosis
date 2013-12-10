@@ -16,6 +16,8 @@ I'm just building up my work space and getting the bare bones node server and cl
 always be knolling
 
 ## Running Ideas and Todos
+- split up the main.js file into multiple files, pull out the api handlers
+
 - dry up tracking dependencies in copy.js and require_config.js
 
 - add filtering to comments for chrono and popularity?

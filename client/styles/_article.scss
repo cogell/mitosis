@@ -1,7 +1,7 @@
 .post {
-
   font-size: 1.6rem;
   line-height: 1.6em;
+
   .header-img {
     position: fixed;
     top: 0;
@@ -12,7 +12,10 @@
     background: white;
     position: relative;
     z-index: $bottom;
+
     margin-top: 460px;
+    padding-bottom: 40px;
+
     header {
       margin-bottom: 1.7em;
     }

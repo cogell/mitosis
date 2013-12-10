@@ -13,7 +13,6 @@ define(function(require){
         // cue comments
         App.trigger('comments:list', 1);
 
-
         // fetch post
         var fetchingPost = App.request('entity:post', id);
         $.when(fetchingPost).done(function(post){
