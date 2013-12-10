@@ -7,7 +7,8 @@ require(['require_config'], function(){
 
     'app',
 
-    'apps/posts/posts'
+    'apps/posts/posts',
+    'apps/comments/comments'
 
     ], function($, packeryPkg, Packery, App){
 

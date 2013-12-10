@@ -10,6 +10,9 @@ define(function(require){
 
         // display loading view in main region
 
+        // cue comments
+        App.trigger('comments:list', 1);
+
         // init view
         var view = new Show.Post();
 

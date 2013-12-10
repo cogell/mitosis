@@ -12,7 +12,7 @@ define(function(require){
       }
     });
 
-    // router api
+    // Posts level api
     var API = {
       showPost: function(id){
         Posts.Show.Controller.showPost(id);
