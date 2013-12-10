@@ -1,7 +1,7 @@
 define(function(require){
 
   var App = require('app');
-  require('apps/comments/list/controller');
+  require('apps/comments/list/list_controller');
 
   return App.module('Comments', function(Comments){
 

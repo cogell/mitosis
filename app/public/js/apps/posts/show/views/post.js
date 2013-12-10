@@ -1,7 +1,7 @@
 define(function(require){
 
   var App = require('app');
-  var Handlebars = require('handlebars');
+  require('Handlebars');
   var _post = require('text!apps/posts/show/templates/post.html')
 
   return App.module('Posts.Show', function(Show){

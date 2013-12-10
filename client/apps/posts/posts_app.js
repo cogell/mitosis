@@ -1,7 +1,7 @@
 define(function(require){
 
   var App = require('app');
-  require('apps/posts/show/controller');
+  require('apps/posts/show/show_controller');
 
   return App.module('Posts', function(Posts){
 
