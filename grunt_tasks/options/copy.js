@@ -19,7 +19,7 @@ module.exports = {
         'backbone/backbone.js',
         'underscore/underscore.js',
         'marionette/lib/backbone.marionette.js',
-        'handlebars/handlebars.amd.js',
+        'handlebars/handlebars.js',
         'text/text.js',
 
         // packery
@@ -31,6 +31,15 @@ module.exports = {
         'get-size/get-size.js',
         'classie/classie.js'
       ]
+    }]
+  },
+  html: {
+    files: [{
+      expand: true,
+      dot: true,
+      cwd: '<%= app %>/apps/',
+      dest: '<%= dist %>/js/apps/',
+      src: '**/*.html'
     }]
   },
   fonts: {

@@ -1,5 +1,4 @@
 # Project Specific
-app/public
 build
 node_modules
 bower_components

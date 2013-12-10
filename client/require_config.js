@@ -9,7 +9,7 @@ require.config({
     backbone: 'vendor/backbone/backbone',
     underscore: 'vendor/underscore/underscore',
     marionette: 'vendor/marionette/lib/backbone.marionette',
-    handlebars: 'vendor/handlebars/handlebars.amd',
+    handlebars: 'vendor/handlebars/handlebars',
     text: 'vendor/text/text',
 
     // packery
@@ -26,6 +26,9 @@ require.config({
   shim: {
     bootstrap: ['jquery'],
     backbone: ['underscore'],
+    handlebars: {
+      exports: 'Handlebars'
+    },
     marionette: {
       deps: ['jquery', 'backbone', 'underscore'],
       exports: 'Backbone.Marionette'
