@@ -9,8 +9,6 @@ define(function(require){
       listComments: function(id){
         // display loading view in comments region
 
-        console.log('test');
-
         // init views
         var view = new List.Comments();
 

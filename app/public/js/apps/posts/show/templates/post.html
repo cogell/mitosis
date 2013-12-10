@@ -1,16 +1,18 @@
 <article class="post">
     <div class="header-img">
-      <img class="img-responsive" src="img/beautiful_nature.jpg" alt="">
+      <img class="img-responsive" src="{{ imgUrl }}" alt="">
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <header>
-            <h1>Some Article Title Here</h1>
-            <h2>With some interesting sub-header here too.</h2>
+            <h1>{{ title }}</h1>
+            <h2>{{ subtitle }}</h2>
           </header>
-          <p>Tousled ethical literally, Neutra Truffaut keytar small batch qui. Flexitarian fugiat voluptate, skateboard sunt ex sint nisi. Post-ironic mixtape Portland, 3 wolf moon Tonx Banksy organic delectus Intelligentsia commodo anim. Mustache Godard synth locavore next level. Deserunt cillum YOLO bicycle rights direct trade gluten-free, incididunt tote bag Tumblr whatever. Farm-to-table forage exercitation, kitsch pariatur synth vinyl literally narwhal fingerstache asymmetrical Schlitz. Mustache proident Truffaut leggings, PBR&amp;B food truck brunch.</p>
+          <div class="body">
+            {{{ body }}}
+            <p>Tousled ethical literally, Neutra Truffaut keytar small batch qui. Flexitarian fugiat voluptate, skateboard sunt ex sint nisi. Post-ironic mixtape Portland, 3 wolf moon Tonx Banksy organic delectus Intelligentsia commodo anim. Mustache Godard synth locavore next level. Deserunt cillum YOLO bicycle rights direct trade gluten-free, incididunt tote bag Tumblr whatever. Farm-to-table forage exercitation, kitsch pariatur synth vinyl literally narwhal fingerstache asymmetrical Schlitz. Mustache proident Truffaut leggings, PBR&amp;B food truck brunch.</p>
 
           <p>Locavore cliche YOLO hella meh, stumptown assumenda gentrify mustache squid nostrud banjo. Cardigan you probably haven't heard of them veniam seitan, 8-bit Odd Future adipisicing chia Portland pop-up bicycle rights ullamco esse Cosby sweater voluptate. Cillum locavore consequat, pariatur banh mi ut Odd Future tattooed. Squid quis Pitchfork Tumblr mustache. Dolor nisi craft beer bicycle rights. Schlitz ethical slow-carb, Truffaut ad Terry Richardson tattooed sunt organic. Tousled tote bag Portland master cleanse, narwhal selvage accusamus labore cupidatat quinoa consectetur cliche leggings sriracha swag.</p>
 
@@ -19,6 +21,7 @@
           </blockquote>
 
           <p>Gentrify commodo drinking vinegar, enim farm-to-table accusamus whatever Thundercats mixtape stumptown. Vero wayfarers Wes Anderson drinking vinegar. Ennui pork belly leggings Pitchfork pariatur, aute hashtag. Banh mi vinyl mumblecore Williamsburg twee selfies deserunt, cillum brunch. Voluptate beard nisi, ea Bushwick YOLO meh Shoreditch blog cred commodo Etsy anim small batch. Blog officia keffiyeh, deserunt Helvetica minim chambray nihil. Whatever laborum Banksy, laboris American Apparel nihil et.</p>
+          </div>
         </div>
       </div>
     </div>

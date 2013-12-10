@@ -13,13 +13,29 @@ define(function(require){
         // cue comments
         App.trigger('comments:list', 1);
 
-        // init view
-        var view = new Show.Post();
 
         // fetch post
+        var fetchingPost = App.request('entity:post', id);
+        $.when(fetchingPost).done(function(post){
 
-        // display post in main region
-        App.mainRegion.show( view );
+          // init view
+          var view;
+
+          if (post !== undefined){
+            console.log('post returned: ', post);
+            view = new Show.Post({
+              model: post
+            });
+          }
+          else {
+            // handle the case where post comes back with an error
+            view = new Show.Post();
+          }
+
+          // display post in main region
+          App.mainRegion.show( view );
+
+        });
       }
     }
 

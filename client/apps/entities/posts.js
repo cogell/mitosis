@@ -5,17 +5,33 @@ define(function(require){
   return App.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
-      url: 'posts/'
+      // url: function(){
+      //   return '/api/posts/' + this.id;
+      // }
+      url: '/api/posts/1'
     });
 
-    App.on('entity:post', function(id){
+    var API = {
+      getPostEntity: function(id){
+        // var post = new Entities.Post({id: id});
+        var post = new Entities.Post();
+        var defer = $.Deferred();
+        console.log('fire');
+        post.fetch({
+          success: function(data){
+            defer.resolve(data);
+          },
+          error: function(err){
+            defer.resolve(undefined);
+          }
+        });
 
-      // make a defer object
+        return defer.promise();
+      }
+    };
 
-      // define events on defer object
-
-      // return defer.promise
-
+    App.reqres.setHandler('entity:post', function(id){
+      return API.getPostEntity();
     });
 
   });
