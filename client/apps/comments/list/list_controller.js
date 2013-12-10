@@ -2,12 +2,17 @@ define(function(require){
 
   var App = require('app');
   require('apps/comments/list/views/comments');
+  require('apps/comments/list/views/comments_layout');
+  // require('apps/comments/list/views/new_comments');
 
   return App.module('Comments.List', function(List){
 
     List.Controller = {
       listComments: function(forId){
         // display loading view in comments region
+
+        var layout = new List.CommentsLayout();
+        // var new_comment = new List.NewComment();
 
 
         // fetch entities
@@ -20,9 +25,12 @@ define(function(require){
           if (comments !== undefined ){
 
             view = new List.Comments({
-              // collection:
-              model: comments
+              collection: comments
             })
+
+            layout.on('show', function(){
+              layout.comments.show( view );
+            });
 
 
           } else {
@@ -30,7 +38,7 @@ define(function(require){
           }
 
           // display layout in comments region
-          App.commentsRegion.show( view );
+          App.commentsRegion.show( layout );
 
         });
 

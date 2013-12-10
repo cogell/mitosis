@@ -1,5 +1,13 @@
-{
-  "id": 1,
-  "forId": 1,
-  "comments": "YOYO"
-}
+[
+  {
+    "id": 1,
+    "body": "Comment Body Here...",
+    "ups": 12
+  },
+
+  {
+    "id": 2,
+    "body": "Comment Body Here...",
+    "ups": 12
+  }
+]

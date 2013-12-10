@@ -2,6 +2,7 @@ require(['require_config'], function(){
 
   require([
     'jquery',
+    'bootstrap',
     'packeryPkg',
     'packery',
 
@@ -14,7 +15,7 @@ require(['require_config'], function(){
     'apps/posts/posts_app',
     'apps/comments/comments_app'
 
-    ], function($, packeryPkg, Packery, App){
+    ], function($, bootstrap, packeryPkg, Packery, App){
 
     App.start();
 
