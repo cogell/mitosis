@@ -3,7 +3,7 @@ define(function(require){
   var App = require('app');
   require('apps/comments/list/views/comments');
   require('apps/comments/list/views/comments_layout');
-  // require('apps/comments/list/views/new_comments');
+  require('apps/comments/list/views/new_comment');
 
   return App.module('Comments.List', function(List){
 
@@ -12,7 +12,7 @@ define(function(require){
         // display loading view in comments region
 
         var layout = new List.CommentsLayout();
-        // var new_comment = new List.NewComment();
+        var newComment = new List.NewComment();
 
 
         // fetch entities
@@ -29,6 +29,7 @@ define(function(require){
             })
 
             layout.on('show', function(){
+              layout.newComment.show( newComment );
               layout.comments.show( view );
             });
 
