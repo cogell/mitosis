@@ -4,7 +4,7 @@
   "authors": [
     "B. Cedric Cogell <cedric.cogell@gmail.com>"
   ],
-  "description": "make comments come alive, client",
+  "description": "make comments come alive, client app",
   "main": "client/main.js",
   "keywords": [
     "backbone",
@@ -20,13 +20,17 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.0.3",
     "requirejs": "~2.1.9"
   },
   "devDependencies": {
+    "jquery": "~2.0.3",
     "bootstrap": "~3.0.3",
     "masonry": "~3.1.2",
     "packery": "~1.1.2",
-    "jquery-bridget": "~1.0.1"
+    "backbone": "~1.1.0",
+    "underscore": "~1.5.2",
+    "handlebars": "~1.1.2",
+    "text": "~2.0.10",
+    "marionette": "~1.4.1"
   }
 }

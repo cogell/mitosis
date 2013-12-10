@@ -7,7 +7,7 @@
     tasks: ['sass:compile']
   },
   bootstrap: {
-    files: ['<%= bower %>/dist/less/*.less'],
+    files: ['<%= bower %>/bootstrap/less/*.less'],
     tasks: ['less:compileBS']
   },
   js: {

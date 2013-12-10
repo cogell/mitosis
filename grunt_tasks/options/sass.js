@@ -5,7 +5,7 @@ module.exports = {
       sourceComments: 'none'
     },
     files: {
-      '<%= dist %>/main.css': '<%= app %>/styles/main.scss'
+      '<%= dist %>/css/main.css': '<%= app %>/styles/main.scss'
     }
   }
 }

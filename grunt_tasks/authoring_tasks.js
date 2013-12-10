@@ -3,7 +3,8 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'clean:public',
     'copy:index',
-    'copy:dependencies',
+    'copy:dep',
+    'copy:fonts',
     'copy:js',
     'copy:requirejs',
     'less:compileBS',
