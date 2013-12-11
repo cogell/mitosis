@@ -7,7 +7,8 @@ h1 {
   top: 0;
   width: 100%; }
   #header .navbar {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    border-radius: 0; }
 
 .post {
   font-size: 1.6rem;

@@ -3,11 +3,13 @@ var fs = require('fs');
 var http = require('http');
 var express = require('express');
 var io = require('socket.io');
+var events = require('events');
 
 // var some our app, server, and io
 var app = express();
 var server = http.createServer(app);
-var port = 5000
+var port = 5000;
+var vent = new events.EventEmitter();
 
 server.listen(port);
 var io = io.listen(server);
@@ -26,23 +28,45 @@ app.get("/api/posts/1", apiGET);
 app.get("/api/comments/for/1", apiGET);
 app.post("/api/comments", newComment);
 
+
+var socks = [];
+
 // socket api
 io.sockets.on('connection', function (socket) {
+
+  vent.emit('newBrowser', socket);
+
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     console.log(data);
   });
+
+  vent.on('newComment', function(data){
+    socks.forEach(function(s){
+      s.emit('newComment', data);
+    });
+  })
+
 });
 
+vent.on('newBrowser', function(socket){
+  socks.push(socket);
+});
+
+
+
 function newComment(req, res){
-  console.log('new comment handler fired >>>>>>>>>>>>>>>>');
-  // console.log( req );
-  res.json({
+  console.log('new comment handler fired \n');
+
+  var data = {
     "id": randomString(32),
     "body": req.body.body
-  });
+  }
+
+  res.json(data);
 
   // eventually return this new comment to everyone on the socket!!!
+  vent.emit('newComment', data);
 }
 
 // api hanlder
@@ -57,6 +81,7 @@ function apiGET(req, res){
         res.send( JSON.parse(data) );
       }
     });
+
 }
 
 function randomString(length){

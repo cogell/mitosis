@@ -19,9 +19,14 @@ require(['require_config'], function(){
     App.start();
 
     var socket = io.connect('/');
+
     socket.on('news', function (data) {
       console.log(data);
       socket.emit('my other event', { my: 'data' });
+    });
+
+    socket.on('newComment', function (data) {
+      App.Comments.List.Controller.collection.add(data);
     });
 
 
