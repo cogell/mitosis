@@ -8,10 +8,11 @@ define(function(require){
     List.Comment = Marionette.ItemView.extend({
       template: Handlebars.compile( _comment ),
       events: {
-        'click': 'commentClicked'
+        'click .js-expand': 'expandClicked'
       },
-      commentClicked: function(e){
-        console.log('Comment clicked');
+      expandClicked: function(e){
+        e.preventDefault();
+        console.log('Expand clicked');
       }
     })
 

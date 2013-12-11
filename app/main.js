@@ -24,7 +24,7 @@ console.log('Express app started on port ' + port);
 
 function newComment(req, res){
   console.log('new comment handler fired >>>>>>>>>>>>>>>>');
-  // console.log( req.body );
+  console.log( req );
   res.json({
     "id": randomString(32),
     "body": req.body.body
