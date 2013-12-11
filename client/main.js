@@ -5,6 +5,8 @@ require(['require_config'], function(){
 
     'app',
 
+    'socketio',
+
     'apps/entities/posts',
     'apps/entities/comments',
 
@@ -12,9 +14,16 @@ require(['require_config'], function(){
     'apps/posts/posts_app',
     'apps/comments/comments_app'
 
-    ], function(bootstrap, App){
+    ], function(bootstrap, App, io){
 
     App.start();
+
+    var socket = io.connect('/');
+    socket.on('news', function (data) {
+      console.log(data);
+      socket.emit('my other event', { my: 'data' });
+    });
+
 
   });
 

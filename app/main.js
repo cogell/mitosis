@@ -1,8 +1,17 @@
+// require modules
 var fs = require('fs');
+var http = require('http');
 var express = require('express');
-var app = express();
+var io = require('socket.io');
 
+// var some our app, server, and io
+var app = express();
+var server = http.createServer(app);
 var port = 5000
+
+server.listen(port);
+var io = io.listen(server);
+console.log('Server started on port ' + port);
 
 // config
 app.use(express.bodyParser());
@@ -17,14 +26,17 @@ app.get("/api/posts/1", apiGET);
 app.get("/api/comments/for/1", apiGET);
 app.post("/api/comments", newComment);
 
-// socket?
-
-app.listen(port);
-console.log('Express app started on port ' + port);
+// socket api
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 
 function newComment(req, res){
   console.log('new comment handler fired >>>>>>>>>>>>>>>>');
-  console.log( req );
+  // console.log( req );
   res.json({
     "id": randomString(32),
     "body": req.body.body

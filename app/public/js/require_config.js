@@ -11,6 +11,7 @@ require.config({
     marionette: 'vendor/marionette/lib/backbone.marionette',
     Handlebars: 'vendor/handlebars/handlebars',
     text: 'vendor/text/text',
+    socketio: 'vendor/socket.io-client/dist/socket.io',
 
     // nice-to-haves
     'backbone.stickit': 'vendor/backbone.stickit/backbone.stickit',

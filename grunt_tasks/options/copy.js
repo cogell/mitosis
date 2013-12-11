@@ -20,6 +20,7 @@ module.exports = {
         'marionette/lib/backbone.marionette.js',
         'handlebars/handlebars.js',
         'text/text.js',
+        'socket.io-client/dist/socket.io.js',
 
         // nice-to-haves
         'backbone.stickit/backbone.stickit.js',
