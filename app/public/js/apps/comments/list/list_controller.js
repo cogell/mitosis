@@ -27,6 +27,8 @@ define(function(require){
 
           if (comments !== undefined ){
 
+            controller.collection = comments;
+
             view = new List.Comments({
               collection: comments
             })
@@ -57,19 +59,20 @@ define(function(require){
         this.layout.newComment.show( newComment );
       },
       newCommentSubmited: function(){
-        console.log( "what is this?", this );
         console.log('about to save new comment...');
-        // get post id
-        // console.log(this.model);
+
         this.model.save({}, {
-          success: function(m, r, o){
+
+          success: function(model, r, o){
             console.log('new comment save succeded.');
-            // console.log( "saved model: ", m );
+
             List.Controller.resetNewComment();
-            // add new comment to comments collection
+            List.Controller.collection.add( model )
           },
+
           error: function(m, x, o){
             console.log('new comment save error.');
+
             // handle error
           }
         });
