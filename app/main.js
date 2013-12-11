@@ -21,7 +21,7 @@ app.use(express.bodyParser());
 // static
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/static'));
-app.use(express.logger()); // after static files
+// app.use(express.logger()); // after static files
 
 // api
 app.get("/api/posts/1", apiGET);
@@ -36,12 +36,10 @@ io.sockets.on('connection', function (socket) {
 
   vent.emit('newBrowser', socket);
 
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
+  socket.emit('hello', { hello: 'world' });
 
   vent.on('newComment', function(data){
+    console.log('new comment fired on server');
     socks.forEach(function(s){
       s.emit('newComment', data);
     });

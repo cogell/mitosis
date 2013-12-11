@@ -5,7 +5,7 @@ require(['require_config'], function(){
 
     'app',
 
-    'socketio',
+    'apps/socket/socket_app',
 
     'apps/entities/posts',
     'apps/entities/comments',
@@ -14,21 +14,9 @@ require(['require_config'], function(){
     'apps/posts/posts_app',
     'apps/comments/comments_app'
 
-    ], function(bootstrap, App, io){
+    ], function(bootstrap, App){
 
     App.start();
-
-    var socket = io.connect('/');
-
-    socket.on('news', function (data) {
-      console.log(data);
-      socket.emit('my other event', { my: 'data' });
-    });
-
-    socket.on('newComment', function (data) {
-      App.Comments.List.Controller.collection.add(data);
-    });
-
 
   });
 

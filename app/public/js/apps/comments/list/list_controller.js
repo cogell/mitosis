@@ -40,6 +40,10 @@ define(function(require){
 
             newComment.on('comment:submit', controller.newCommentSubmited)
 
+            App.on('socket:newComment', function(data){
+              List.Controller.collection.add( data )
+            });
+
 
           } else {
             // handle the case where comments come back undefined
