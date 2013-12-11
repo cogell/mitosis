@@ -24,3 +24,5 @@ always be knolling
 
 - being said right now on the top, like a news ticker!
 - can only start a new conversation if your account has enough karma (like stackoverflow?)
+
+- possible project names: meiosis,

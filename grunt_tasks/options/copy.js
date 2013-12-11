@@ -10,9 +10,8 @@ module.exports = {
       cwd: '<%= bower %>',
       dest: '<%= dist %>/js/vendor',
       src: [
+        // base
         'jquery/jquery.js',
-
-        // bootstrap
         'bootstrap/dist/js/bootstrap.js',
 
         // core
@@ -21,6 +20,9 @@ module.exports = {
         'marionette/lib/backbone.marionette.js',
         'handlebars/handlebars.js',
         'text/text.js',
+
+        // nice-to-haves
+        'backbone.stickit/backbone.stickit.js',
 
         // packery
         'packery/js/packery.js',

@@ -12,13 +12,15 @@ require.config({
     Handlebars: 'vendor/handlebars/handlebars',
     text: 'vendor/text/text',
 
+    // nice-to-haves
+    'backbone.stickit': 'vendor/backbone.stickit/backbone.stickit',
+
     // packery
     packeryPkg: 'vendor/packery.pkgd',
     packery: 'vendor/packery/js/packery',
     packer: 'vendor/packery/js/packer',
     item: 'vendor/packery/js/item',
     rect: 'vendor/packery/js/rect',
-
     outlayer: 'vendor/outlayer',
     'get-size': 'vendor/get-size',
     classie: 'vendor/classie'
@@ -32,6 +34,9 @@ require.config({
     marionette: {
       deps: ['jquery', 'backbone', 'underscore'],
       exports: 'Backbone.Marionette'
+    },
+    'backbone.stickit': {
+      deps: ['jquery', 'underscore', 'backbone']
     }
   }
 });

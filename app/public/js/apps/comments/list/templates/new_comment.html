@@ -6,12 +6,12 @@
     <h1>Join the Conversation</h1>
     <h2>{{ comments }}</h2>
 
-    <form class="new-form" action="/comments" method="post">
+    <form class="new-form" action="/api/comments" method="post">
       <label class="new-comment">
         <h3>Add your input:</h3>
-        <textarea class="form-control input-lg" placeholder="your comment..."></textarea>
+        <textarea class="form-control input-lg new-comment-body" placeholder="your comment..."></textarea>
       </label>
-      <input class="btn btn-lg btn-primary submit" type="submit" value="Start a conversation.">
+      <input class="btn btn-lg btn-primary submit js-submit" type="submit" value="Start a conversation.">
     </form>
 
     </div>

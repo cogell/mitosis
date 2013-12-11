@@ -31,6 +31,7 @@
     "underscore": "~1.5.2",
     "handlebars": "~1.1.2",
     "text": "~2.0.10",
-    "marionette": "~1.4.1"
+    "marionette": "~1.4.1",
+    "backbone.stickit": "~0.6.3"
   }
 }
