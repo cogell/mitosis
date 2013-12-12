@@ -2,18 +2,22 @@
 var fs = require('fs');
 var http = require('http');
 var express = require('express');
-var io = require('socket.io');
-var events = require('events');
-var _ = require('underscore');
+// var io = require('socket.io');
+// var events = require('events');
+// var _ = require('underscore');
+
+// require custom modules
+// var socketHandler = require('./socketHandler');
 
 // var some our app, server, and io
 var app = express();
 var server = http.createServer(app);
 var port = 5000;
-var vent = new events.EventEmitter();
+
+// var vent = new events.EventEmitter();
 
 server.listen(port);
-var io = io.listen(server);
+// var io = io.listen(server);
 console.log('Server started on port ' + port);
 
 // config
@@ -34,74 +38,46 @@ app.get("/api/messages/for/1", apiGET);
 app.post("/api/messages", newMessage);
 
 
-var clientSockets = [];
+// var clientSockets = [];
 
-// socket api
-io.sockets.on('connection', function (socket) {
+// // socket api
+// io.sockets.on('connection', function (socket) {
+//   socketHandler(socket, vent, clientSockets);
+// });
 
-  socket.emit('hello', { hello: 'world' });
+// vent.on('newClient', function(socket, clientId){
+//   var clientSocket = {
+//     clientId: clientId,
+//     socket: socket,
+//     chats: []
+//   }
+//   clientSockets.push( clientSocket );
+// });
 
-  socket.on('clientId', function(data){
-    console.log('>>>>>>>>>>>>>>> clientID data:', data);
-    vent.emit('newClient', socket, data.clientId);
-  });
+// vent.on('openChat', function(clientId, chatId){
+//   var clientArray = _.filter(clientSockets, function(v, k, list){
+//     console.log('v.clientId: ', v.clientId);
+//     return v.clientId == clientId;
+//   });
 
-  socket.on('openChat', function(clientId, chatId){
-    vent.emit('openChat', clientId, chatId);
-  });
+//   if (clientArray.length > 0){
+//     clientArray[0].chats.push(chatId);
+//     console.log('>>>>>>>>>>>> clientArray[0].chats', clientArray[0].chats);
+//   }
 
-  socket.on('disconnect', function(socket){
-    vent.emit('removeClient', socket);
-  });
+//   _.each(clientSockets, function(v, k, list){
+//     console.log('v.clientId: ', v.clientId);
+//     console.log('v.chats: ', v.chats);
+//     console.log('_______________________________');
+//   });
+// });
 
-  vent.on('newComment', function(data){
-    clientSockets.forEach(function(cs){
-      cs.socket.emit('newComment', data);
-    });
-  });
-
-  vent.on('newMessage', function(data, chatId){
-    clientSockets.forEach(function(cs){
-      // check to see what chats each client has open
-      cs.socket.emit('newMessage', data, chatId);
-    });
-  });
-
-});
-
-vent.on('newClient', function(socket, clientId){
-  var clientSocket = {
-    clientId: clientId,
-    socket: socket,
-    chats: []
-  }
-  clientSockets.push( clientSocket );
-});
-
-vent.on('openChat', function(clientId, chatId){
-  var clientArray = _.filter(clientSockets, function(v, k, list){
-    console.log('v.clientId: ', v.clientId);
-    return v.clientId == clientId;
-  });
-
-  if (clientArray.length > 0){
-    clientArray[0].chats.push(chatId);
-    console.log('>>>>>>>>>>>> clientArray[0].chats', clientArray[0].chats);
-  }
-
-  _.each(clientSockets, function(v, k, list){
-    console.log('v.clientId: ', v.clientId);
-    console.log('v.chats: ', v.chats);
-    console.log('_______________________________');
-  });
-});
-
-vent.on('removeClient', function(socket){
-  var client = _.filter(clientSockets, function(v, k, list){
-    return v.socket == socket;
-  });
-  console.log('found this client to remove: ', client);
-});
+// vent.on('removeClient', function(socket){
+//   var client = _.filter(clientSockets, function(v, k, list){
+//     return v.socket == socket;
+//   });
+//   console.log('found this client to remove: ', client);
+// });
 
 function newMessage(req, res){
   console.log('new message handler fired \n');
@@ -117,7 +93,7 @@ function newMessage(req, res){
 
   res.json(data);
 
-  vent.emit('newMessage', data, chatId);
+  // vent.emit('newMessage', data, chatId);
 }
 
 function newComment(req, res){
@@ -130,7 +106,7 @@ function newComment(req, res){
 
   res.json(data);
 
-  vent.emit('newComment', data);
+  // vent.emit('newComment', data);
 }
 
 function apiGET(req, res){

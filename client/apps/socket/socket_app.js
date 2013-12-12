@@ -6,7 +6,8 @@ define(function(require){
   return App.module('Socket', function(Socket){
 
     var initialize = function(){
-      var socket = io.connect('/');
+      // var socket = io.connect('/');
+      var socket = io.connect('http://localhost:5010/');
 
       Socket.clientId = randomString(32);
 
@@ -31,6 +32,14 @@ define(function(require){
 
       App.on('socket:openChat', function(clientId, chatId){
         socket.emit('openChat', clientId, chatId);
+      });
+
+      App.on('client:newComment', function(comment){
+        socket.emit('client:newComment', comment);
+      });
+
+      App.on('client:newMessage', function(message){
+        socket.emit('client:newMessage', message);
       });
     }
 

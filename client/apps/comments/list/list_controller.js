@@ -76,6 +76,7 @@ define(function(require){
 
             List.Controller.resetNewComment();
             List.Controller.collection.add( model )
+            App.trigger('client:newComment', model);
           },
 
           error: function(m, x, o){

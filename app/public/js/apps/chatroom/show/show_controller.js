@@ -50,13 +50,11 @@ define(function(require){
             this.messages.show(messagesView);
           });
 
-          App.on('socket:newMessage', function(data, chartId){
-            console.log('in message controller and getting...');
-            console.log('model: ', data);
-            console.log('chartId: ', chartId);
-            // if chartID = controller.chartId
-            // then add model to controller.collection
-            // else do nothing
+          App.on('socket:newMessage', function(message){
+            console.log('Chatroom controller recieved...');
+            console.log('message: ', message);
+
+            // add message to controller collection
           });
 
           // return layout view OR show layout view
@@ -83,7 +81,7 @@ define(function(require){
 
             // reset new message
             Show.Controller.resetNewMessage();
-            // add saved model to list of messages
+            App.trigger('client:newMessage', model);
           },
           error: function(m, x, o){
             console.log('new message save error.');
