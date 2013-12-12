@@ -41,6 +41,8 @@ define(function(require){
             // handle the case where there are no messages
           }
 
+          App.trigger('socket:openChat', App.Socket.clientId, controller.chatId);
+
           newMessage.on('message:submit', controller.newMessageSubmited);
 
           controller.layout.on('show', function(){
