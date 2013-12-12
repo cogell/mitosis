@@ -2,26 +2,31 @@
   {
     "id": 1,
     "body": "Comment Body Here...",
-    "ups": 12
+    "ups": 12,
+    "user": "Cortney Fedelmid"
   },
   {
     "id": 2,
     "body": "Comment Body Here...",
-    "ups": 1
+    "ups": 1,
+    "user": "Kamala Fedelmid"
   },
   {
     "id": 3,
     "body": "Comment Body Here...",
-    "ups": 22
+    "ups": 22,
+    "user": "Nikephoros Shyama"
   },
   {
     "id": 4,
     "body": "Comment Body Here...",
-    "ups": 5
+    "ups": 5,
+    "user": "Bala Vijaya"
   },
   {
     "id": 5,
     "body": "Comment Body Here...",
-    "ups": 55
+    "ups": 55,
+    "user": "Aeron Lalita"
   }
 ]

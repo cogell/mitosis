@@ -17,6 +17,11 @@ define(function(require){
         console.log('new comment event from socket fired');
         App.trigger('socket:newComment', data);
       });
+
+      socket.on('newMessage', function (data, chatId) {
+        console.log('new message event from socket fired');
+        App.trigger('socket:newMessage', data, chatId);
+      });
     }
 
     App.on('initialize:before', initialize);

@@ -7,7 +7,6 @@ define(function(require){
     Entities.Comment = Backbone.Model.extend({
       url: '/api/comments/',
       initialize: function(){
-        console.log('init comment model');
         this.setSize();
       },
       setSize: function(){

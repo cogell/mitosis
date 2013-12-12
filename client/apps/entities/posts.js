@@ -13,9 +13,8 @@ define(function(require){
     var API = {
       getPostEntity: function(id){
         var post = new Entities.Post({id: id});
-        // var post = new Entities.Post();
         var defer = $.Deferred();
-        console.log('fire');
+
         post.fetch({
           success: function(data){
             defer.resolve(data);

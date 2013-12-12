@@ -21,7 +21,6 @@ define(function(require){
           var view;
 
           if (post !== undefined){
-            console.log('post returned: ', post);
             view = new Show.Post({
               model: post
             });

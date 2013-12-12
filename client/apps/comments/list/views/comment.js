@@ -10,9 +10,6 @@ define(function(require){
       events: {
         'click .js-expand': 'expandClicked'
       },
-      initialize: function(){
-        console.log( "this model size: ", this.model.get('size') );
-      },
       expandClicked: function(e){
         e.preventDefault();
         this.trigger('expandClicked');

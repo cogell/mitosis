@@ -7,7 +7,8 @@ define(function(require){
   App.addRegions({
     headerRegion: '#header',
     mainRegion: '#main',
-    commentsRegion: '#comments'
+    commentsRegion: '#comments',
+    chatRegion: '#chat',
   });
 
   App.on('initialize:after', function(){

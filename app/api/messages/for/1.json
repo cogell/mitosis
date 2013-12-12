@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "body": "Here is some message text here",
+    "user": "Arden Vivian",
+    "chatId": 1
+  },
+  {
+    "id": 2,
+    "body": "Here is some message text here",
+    "user": "Ash Rowan",
+    "chatId": 1
+  },
+  {
+    "id": 3,
+    "body": "Here is some message text here",
+    "user": "Meredith Montana",
+    "chatId": 1
+  },
+  {
+    "id": 4,
+    "body": "Here is some message text here",
+    "user": "Shirley Merle",
+    "chatId": 1
+  },
+  {
+    "id": 5,
+    "body": "Here is some message text here",
+    "user": "Hadley Kendall",
+    "chatId": 1
+  }
+]
