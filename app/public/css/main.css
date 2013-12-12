@@ -52,8 +52,8 @@ h1 {
   width: 100%; }
   .packery-container .item, .packery-container .comment {
     position: relative;
-    width: 10%;
-    height: 10%;
+    width: 25%;
+    height: 8em;
     padding: 10px;
     background: #ede8df;
     border-top: 1px solid white;

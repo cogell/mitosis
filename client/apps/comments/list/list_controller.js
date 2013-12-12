@@ -23,22 +23,26 @@ define(function(require){
         $.when(fetchingComments).done(function(comments){
 
           // init views
-          var view;
+          var commentsView;
 
           if (comments !== undefined ){
 
             controller.collection = comments;
 
-            view = new List.Comments({
+            commentsView = new List.Comments({
               collection: comments
             })
 
             controller.layout.on('show', function(){
               this.newComment.show( newComment );
-              this.comments.show( view );
+              this.comments.show( commentsView );
             });
 
             newComment.on('comment:submit', controller.newCommentSubmited)
+
+            commentsView.on('itemview:expandClicked', function(v, msg){
+              console.log('event bubbled up to me');
+            });
 
             App.on('socket:newComment', function(data){
               List.Controller.collection.add( data )

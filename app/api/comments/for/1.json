@@ -4,10 +4,24 @@
     "body": "Comment Body Here...",
     "ups": 12
   },
-
   {
     "id": 2,
     "body": "Comment Body Here...",
-    "ups": 12
+    "ups": 1
+  },
+  {
+    "id": 3,
+    "body": "Comment Body Here...",
+    "ups": 22
+  },
+  {
+    "id": 4,
+    "body": "Comment Body Here...",
+    "ups": 5
+  },
+  {
+    "id": 5,
+    "body": "Comment Body Here...",
+    "ups": 55
   }
 ]

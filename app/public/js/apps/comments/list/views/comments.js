@@ -12,14 +12,16 @@ define(function(require){
       itemView: List.Comment,
       itemViewContainer: '.packery-container',
       className: 'comments-container',
+
+      // packery
       onShow: function(){
         this.pckryReload();
       },
       onAfterItemAdded: function(itemView){
         this.pckryReload();
+        this.on('itemview:expandClicked', this.expandController);
       },
       pckryReload: function(){
-        console.log('test');
         if (this.pckry){
           this.pckry.packery('reload');
         } else {
@@ -33,6 +35,9 @@ define(function(require){
           itemSelector: '.item',
           gutter: 0
         });
+      },
+      expandController: function(cv, msg){
+        // expand the comment and make it fit inplace
       }
     })
 
