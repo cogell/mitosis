@@ -5,11 +5,14 @@ define(function(require){
   var Packery = require('packery');
   require('Handlebars');
   require('apps/comments/list/views/comment');
+  // require('apps/comments/list/views/comment_layout');
 
   return App.module('Comments.List', function(List){
 
     List.Comments = Marionette.CollectionView.extend({
+      // itemView: List.CommentLayout,
       itemView: List.Comment,
+
       itemViewContainer: '.packery-container',
       className: 'comments-container',
 

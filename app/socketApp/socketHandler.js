@@ -1,4 +1,4 @@
-module.exports = function(socket, vent, clientSockets){
+module.exports = function(socket, vent, clientSockets, chatMap){
 
   socket.emit('hello', { hello: 'world' });
 
@@ -20,16 +20,22 @@ module.exports = function(socket, vent, clientSockets){
   socket.on('client:newMessage', broadcastNewMessage);
 
   function broadcastNewMessage(message){
-    clientSockets.forEach(function(cs){
-      // check to see what chats each client has open
-      cs.socket.emit('newMessage', message);
-    });
+    var listeningClients = chatMap[message.chatId];
+    if (listeningClients.length > 0){
+
+      listeningClients.forEach(function(clientId){
+        clientSockets[clientId].emit('newMessage', message);
+      });
+
+    }
   }
 
   function broadcastNewComment(comment){
-    clientSockets.forEach(function(cs){
-      cs.socket.emit('newComment', comment );
-    });
+    if (clientSockets.length > 0){
+      clientSockets.forEach(function(cs){
+        cs.socket.emit('newComment', comment );
+      });
+    }
   }
 
 }

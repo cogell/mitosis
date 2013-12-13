@@ -20,24 +20,20 @@ define(function(require){
           model: new App.Entities.Message()
         });
 
-        console.log('here');
-
         // fetch chat messages
         var fetchingMessages = App.request('entities:messages', id);
+
         $.when(fetchingMessages).done(function(messages){
           var messagesView;
 
           if (messages !== undefined){
-
+            controller.collection = messages;
             messagesView = new Show.Messages({
               collection: messages
             });
-
-            // listen for new message post
-            // listen for message +1
-
           }
           else {
+            controller.collection = [];
             // handle the case where there are no messages
           }
 
@@ -53,8 +49,7 @@ define(function(require){
           App.on('socket:newMessage', function(message){
             console.log('Chatroom controller recieved...');
             console.log('message: ', message);
-
-            // add message to controller collection
+            controller.collection.add(message);
           });
 
           // return layout view OR show layout view

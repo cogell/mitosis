@@ -28,5 +28,35 @@
     "body": "Comment Body Here...",
     "ups": 55,
     "user": "Aeron Lalita"
+  },
+  {
+    "id": 6,
+    "body": "Comment Body Here...",
+    "ups": 12,
+    "user": "Cortney Fedelmid"
+  },
+  {
+    "id": 7,
+    "body": "Comment Body Here...",
+    "ups": 1,
+    "user": "Kamala Fedelmid"
+  },
+  {
+    "id": 8,
+    "body": "Comment Body Here...",
+    "ups": 22,
+    "user": "Nikephoros Shyama"
+  },
+  {
+    "id": 9,
+    "body": "Comment Body Here...",
+    "ups": 5,
+    "user": "Bala Vijaya"
+  },
+  {
+    "id": 10,
+    "body": "Comment Body Here...",
+    "ups": 55,
+    "user": "Aeron Lalita"
   }
 ]

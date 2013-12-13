@@ -1,20 +1,41 @@
 .packery-container {
   width: 100%;
+  font-size: 2.5rem;
 
   .item, .comment {
     position: relative;
 
-    width: 25%;
-    height: 8em;
+    width: 1em;
+    height: 1em;
 
     padding: 10px;
     background: $off-white;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid white;
+  }
+  .comment.small {
+    font-size: 2em;
+  }
+  .comment.medium {
+    font-size: 4em;
+    background: $light-blue;
+  }
+  .comment.large {
+    font-size: 8em;
+    background: $blue;
+    color: white;
+  }
+  .comment.big {
+    font-size: 16em;
+    background: $red;
+    color: white;
+  }
 
-    font-size: 1.5rem;
-
+  .comment {
+    .content {
+      font-size: 0.0625em;
+    }
     .comment-body {
 
     }
@@ -31,29 +52,6 @@
       right: 10px;
       cursor: pointer;
     }
-  }
-
-  .big {
-    padding: 20px;
-    width: 50%;
-    height: 300px;
-    background: $red;
-    color: white;
-    font-size: 3em;
-  }
-  .large {
-    padding: 20px;
-    width: 33.3333333%;
-    height: 200px;
-    background: $blue;
-    color: white;
-    font-size: 2em;
-  }
-  .medium {
-    width: 20%;
-    height: 100px;
-    background: $light-blue;
-    font-size: 1.5em;
   }
 
 }

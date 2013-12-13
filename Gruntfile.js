@@ -23,7 +23,7 @@ module.exports = function(grunt){
   var config = {
     pkg: grunt.file.readJSON('package.json'),
     app: 'client',
-    dist: 'app/public',
+    dist: 'app/httpApp/public',
     bower: 'bower_components'
   }
 
