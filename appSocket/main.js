@@ -10,7 +10,7 @@ var socketHandler = require('./socketHandler');
 // var some globals
 var app = express();
 var server = http.createServer(app);
-var port = 5010;
+var port = process.env.PORT || 5010;
 var vent = new events.EventEmitter();
 
 server.listen(port);
