@@ -1,2 +1,1 @@
-web: node appHTTP/main.js
-web: node appSocket/main.js
+web: node app/main.js

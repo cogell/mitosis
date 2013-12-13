@@ -6,8 +6,8 @@ define(function(require){
   return App.module('Socket', function(Socket){
 
     var initialize = function(){
-      // var socket = io.connect('/');
-      var socket = io.connect('http://localhost:5010/');
+      var socket = io.connect('/');
+      // var socket = io.connect('http://localhost:5010/');
 
       Socket.clientId = randomString(32);
 

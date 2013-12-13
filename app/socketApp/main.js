@@ -1,35 +1,24 @@
-// vendor modules
-var http = require('http');
-var express = require('express');
+// modules
 var io = require('socket.io');
 var events = require('events');
 
-// require custom modules
+// custom modules
 var socketHandler = require('./socketHandler');
 
-// var some globals
-var app = express();
-var server = http.createServer(app);
-var port = process.env.PORT || 5010;
+// global vars
 var vent = new events.EventEmitter();
-
-server.listen(port);
-var io = io.listen(server);
-
-app.use(express.bodyParser());
-
-app.all('/', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
-
 var clientSockets = [];
 
-// socket api
-io.sockets.on('connection', function (socket) {
-  socketHandler(socket, vent, clientSockets);
-});
+// init socket server
+function start( server ){
+
+  io = io.listen(server);
+
+  io.sockets.on('connection', function (socket) {
+    socketHandler(socket, vent, clientSockets);
+  });
+
+}
 
 vent.on('newClient', function(socket, clientId){
   var clientSocket = {
@@ -64,3 +53,5 @@ vent.on('removeClient', function(socket){
   });
   console.log('found this client to remove: ', client);
 });
+
+exports.start = start;
