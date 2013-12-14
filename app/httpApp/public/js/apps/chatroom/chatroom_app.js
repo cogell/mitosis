@@ -7,12 +7,16 @@ define(function(require){
 
     var API = {
       joinChat: function(id){
-        Chatroom.Show.Controller.joinChat(id);
+        return Chatroom.Show.Controller.joinChat(id);
       }
     }
 
-    App.on('chatroom:joinChat', function(id){
-      API.joinChat(id);
+    // App.reqres.setHandler('chatroom:joinChat', function(id){
+    //   return API.joinChat(id);
+    // });
+
+    App.reqres.setHandler('chatroom:show', function(id){
+      return API.joinChat(id);
     });
 
   });

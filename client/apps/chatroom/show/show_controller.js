@@ -13,8 +13,6 @@ define(function(require){
         var controller = this;
         controller.chatId = id;
 
-        // throw up loading view
-
         controller.layout = new Show.Chatroom();
         var newMessage = new Show.NewMessage({
           model: new App.Entities.Message()
@@ -23,7 +21,7 @@ define(function(require){
         // fetch chat messages
         var fetchingMessages = App.request('entities:messages', id);
 
-        $.when(fetchingMessages).done(function(messages){
+        return $.when(fetchingMessages).done(function(messages){
           var messagesView;
 
           if (messages !== undefined){
@@ -53,7 +51,9 @@ define(function(require){
           });
 
           // return layout view OR show layout view
-          App.chatRegion.show( controller.layout );
+          // App.chatRegion.show( controller.layout );
+
+          return controller.layout;
         });
 
 

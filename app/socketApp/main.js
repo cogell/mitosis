@@ -31,6 +31,10 @@ vent.on('openChat', function(clientId, chatId){
     chatMap[chatId] = [clientId];
   }
 
+  // calling uniq to remove any duplicates
+  console.log('chatMap[clientID]: ', chatMap[chatId] );
+  chatMap[chatId] = _.uniq( chatMap[chatId] );
+
   console.log('current chat map: ', chatMap );
 
 });
