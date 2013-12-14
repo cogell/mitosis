@@ -26,11 +26,12 @@ define(function(require){
       },
       setHandlers: function( layout, newMessage, id ){
         var controller = this;
+        // var newMessage = newMessage;
 
-        layout.on('render:newMessage', function(newMessage){
+        layout.on('render:newMessage', function(){
           console.log('show new message');
 
-          layout.messages.show( messagesView );
+          this.newMessageRegion.show( newMessage );
 
           newMessage.on('message:submit', controller.newMessageSubmited);
 
@@ -63,7 +64,7 @@ define(function(require){
 
             App.trigger('socket:openChat', App.Socket.clientId, controller.chatId);
 
-            layout.messages.show( messagesView );
+            layout.messagesRegion.show( messagesView );
 
           });
 

@@ -7,6 +7,7 @@ define(function(require){
 
     Show.CommentLayout = Marionette.Layout.extend({
       template: Handlebars.compile( _commentLayout ),
+      className: 'item comment',
       regions: {
         commentRegion: '.comment-container',
         chatroomRegion: '.chatroom-container'

@@ -8,8 +8,8 @@ define(function(require){
     Show.Chatroom = Marionette.Layout.extend({
       template: Handlebars.compile( _chatroomLayout ),
       regions: {
-        messages: '.messages',
-        newMessage: '.new-message'
+        messagesRegion: '.messages',
+        newMessageRegion: '.new-message'
       },
       onShow: function(e){
         this.trigger('render:messages');
