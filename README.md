@@ -6,7 +6,7 @@
 npm install
 bower install
 grunt dev
-node app/index.js
+node app/main.js
 ```
 
 ## Current Status
