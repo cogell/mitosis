@@ -14,15 +14,17 @@ define(function(require){
       },
       getChatroomView: function(id){
 
+        this.chatId = id;
+
         // init views
-        var layout = new Show.Chatroom();
+        this.layout = new Show.Chatroom();
         var newMessage = new Show.NewMessage({
           model: new App.Entities.Comment()
         });
 
-        this.setHandlers( layout, newMessage, id );
+        this.setHandlers( this.layout, newMessage, id );
 
-        return layout;
+        return this.layout;
       },
       setHandlers: function( layout, newMessage, id ){
         var controller = this;
@@ -62,7 +64,7 @@ define(function(require){
               // handle the case where there are no messages
             }
 
-            App.trigger('socket:openChat', App.Socket.clientId, controller.chatId);
+            App.trigger('comment:openChat', App.Socket.clientId, controller.chatId);
 
             layout.messagesRegion.show( messagesView );
 
@@ -75,7 +77,7 @@ define(function(require){
           model: new App.Entities.Message()
         });
         newMessage.on('message:submit', Show.Controller.newMessageSubmited);
-        this.layout.newMessage.show( newMessage );
+        this.layout.newMessageRegion.show( newMessage );
       },
       newMessageSubmited:function(){
 

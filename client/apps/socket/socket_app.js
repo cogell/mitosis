@@ -34,7 +34,7 @@ define(function(require){
         App.trigger('socket:newMessage', data, chatId);
       });
 
-      App.on('socket:openChat', function(clientId, chatId){
+      App.on('comment:openChat', function(clientId, chatId){
         socket.emit('openChat', clientId, chatId);
       });
 

@@ -7,10 +7,18 @@ define(function(require){
 
     Show.CommentLayout = Marionette.Layout.extend({
       template: Handlebars.compile( _commentLayout ),
-      className: 'item comment',
+      className: function(){
+        return 'item comment ' + this.model.get('size');
+      },
       regions: {
         commentRegion: '.comment-container',
         chatroomRegion: '.chatroom-container'
+      },
+      initialize: function(){
+        this.on('expand', this.onExpand);
+      },
+      onExpand: function(){
+        this.$el.addClass('expanded');
       }
     })
 

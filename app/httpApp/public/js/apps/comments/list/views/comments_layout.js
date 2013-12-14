@@ -8,6 +8,7 @@ define(function(require){
 
     List.CommentsLayout = Marionette.Layout.extend({
       template: Handlebars.compile( _comments_layout ),
+      className: 'comments',
       regions: {
         newComment: '#new-comment',
         comments: '.comments-container'

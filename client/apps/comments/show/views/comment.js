@@ -7,10 +7,6 @@ define(function(require){
 
     Show.Comment = Marionette.ItemView.extend({
       template: Handlebars.compile( _comment ),
-      // className: function(){
-      //   // return 'item comment ' + this.model.get('size');
-      //   return '';
-      // },
       events: {
         'click .js-expand': 'expandClicked'
       },

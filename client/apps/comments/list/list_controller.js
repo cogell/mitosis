@@ -40,8 +40,8 @@ define(function(require){
 
             newComment.on('comment:submit', controller.newCommentSubmited)
 
-            commentsView.on('itemview:expandClicked', function(v, msg){
-              console.log('event bubbled up to me');
+            commentsView.on('itemview:expand', function(v, msg){
+              commentsView.pckryReload();
             });
 
             App.on('socket:newComment', function(data){

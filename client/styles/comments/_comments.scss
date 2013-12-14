@@ -1,0 +1,11 @@
+.comments {
+  position: relative;
+  background: white;
+
+  margin-bottom: 20em;
+
+  @import 'new_comment';
+
+  @import 'comments_list';
+
+}

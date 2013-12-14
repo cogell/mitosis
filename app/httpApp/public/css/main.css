@@ -47,44 +47,48 @@ h1 {
     .comments .new-form .submit {
       width: 100%;
       border-radius: 0; }
-
-.packery-container {
-  width: 100%;
-  font-size: 2.5rem; }
-  .packery-container .item, .packery-container .comment {
-    position: relative;
-    width: 1em;
-    height: 1em;
-    padding: 10px;
-    background: #ede8df;
-    border-top: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white; }
-  .packery-container .comment.small {
-    font-size: 2em; }
-  .packery-container .comment.medium {
-    font-size: 4em;
-    background: #6aceeb; }
-  .packery-container .comment.large {
-    font-size: 8em;
-    background: #30394f;
-    color: white; }
-  .packery-container .comment.big {
-    font-size: 16em;
-    background: #ff434c;
-    color: white; }
-  .packery-container .comment .content {
-    font-size: 0.0625em; }
-  .packery-container .comment .comment-count {
-    position: absolute;
-    bottom: 10px; }
-    .packery-container .comment .comment-count p {
-      margin: 0; }
-  .packery-container .comment .comment-expand {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    cursor: pointer; }
+  .comments .comments-container {
+    width: 100%;
+    font-size: 2.5rem; }
+    .comments .comments-container .comment.expanded {
+      width: 100%;
+      height: auto; }
+    .comments .comments-container .comment {
+      position: relative;
+      width: 1em;
+      height: 1em;
+      padding: 10px;
+      background: #ede8df;
+      border-top: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white; }
+    .comments .comments-container .comment.small {
+      font-size: 2em; }
+    .comments .comments-container .comment.medium {
+      font-size: 4em;
+      background: #6aceeb; }
+    .comments .comments-container .comment.large {
+      font-size: 8em;
+      background: #30394f;
+      color: white; }
+    .comments .comments-container .comment.big {
+      font-size: 16em;
+      background: #ff434c;
+      color: white; }
+    .comments .comments-container .comment .content {
+      font-size: 0.0625em; }
+    .comments .comments-container .comment .comment-count {
+      position: absolute;
+      bottom: 10px; }
+      .comments .comments-container .comment .comment-count p {
+        margin: 0; }
+    .comments .comments-container .comment .comment-expand {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer; }
+    .comments .comments-container .chatroom-container {
+      font-size: 1rem; }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

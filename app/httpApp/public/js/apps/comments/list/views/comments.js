@@ -20,7 +20,6 @@ define(function(require){
         return view;
       },
 
-      itemViewContainer: '.packery-container',
       className: 'comments-container',
 
       // packery

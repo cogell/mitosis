@@ -21,6 +21,10 @@ module.exports = function(socket, vent, clientSockets, chatMap, _){
 
   function broadcastNewMessage(message){
     var listeningClients = chatMap[message.chatId];
+
+    console.log('chat map is: ', chatMap);
+    console.log('chat id is: ', message.chatId);
+
     if (listeningClients.length > 0){
 
       listeningClients.forEach(function(clientId){

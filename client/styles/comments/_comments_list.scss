@@ -1,8 +1,14 @@
-.packery-container {
+.comments-container {
   width: 100%;
   font-size: 2.5rem;
 
-  .item, .comment {
+  // when comment is in expanded state
+  .comment.expanded{
+    width: 100%;
+    height: auto;
+  }
+
+  .comment {
     position: relative;
 
     width: 1em;
@@ -53,5 +59,7 @@
       cursor: pointer;
     }
   }
+
+  @import 'chatroom';
 
 }
