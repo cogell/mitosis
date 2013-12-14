@@ -76,7 +76,7 @@ define(function(require){
 
             // reset new message
             Show.Controller.resetNewMessage();
-            App.trigger('client:newMessage', model);
+            App.trigger('chatroom:newMessage', model);
           },
           error: function(m, x, o){
             console.log('new message save error.');

@@ -45,6 +45,7 @@ define(function(require){
             });
 
             App.on('socket:newComment', function(data){
+              console.log('Comments.List received a new comment from the socket: ', data);
               List.Controller.collection.add( data )
             });
 
@@ -76,7 +77,7 @@ define(function(require){
 
             List.Controller.resetNewComment();
             List.Controller.collection.add( model )
-            App.trigger('client:newComment', model);
+            App.trigger('comments:newComment', model);
           },
 
           error: function(m, x, o){

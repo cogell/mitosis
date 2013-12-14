@@ -15,7 +15,7 @@ var chatMap = {};
 function start( server ){
   io = io.listen(server);
   io.sockets.on('connection', function (socket) {
-    socketHandler(socket, vent, clientSockets, chatMap);
+    socketHandler(socket, vent, clientSockets, chatMap, _);
   });
 }
 
@@ -41,6 +41,7 @@ vent.on('removeClient', function(socket){
     return v == socket;
   });
   console.log('found this client to remove: ', client);
+
 });
 
 exports.start = start;

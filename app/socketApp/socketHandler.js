@@ -1,6 +1,6 @@
-module.exports = function(socket, vent, clientSockets, chatMap){
+module.exports = function(socket, vent, clientSockets, chatMap, _){
 
-  socket.emit('hello', { hello: 'world' });
+  socket.emit('handshake', { hello: "what's your name?" });
 
   socket.on('clientId', function(data){
     console.log('>>>>>>>>>>>>>>> clientID data:', data);
@@ -31,9 +31,9 @@ module.exports = function(socket, vent, clientSockets, chatMap){
   }
 
   function broadcastNewComment(comment){
-    if (clientSockets.length > 0){
-      clientSockets.forEach(function(cs){
-        cs.socket.emit('newComment', comment );
+    if (clientSockets){
+      _.each(clientSockets, function(v, k, l){
+        v.emit('newComment', comment);
       });
     }
   }

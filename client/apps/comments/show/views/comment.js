@@ -1,11 +1,11 @@
 define(function(require){
 
   var App = require('app');
-  var _comment = require('text!apps/comments/list/templates/comment.html');
+  var _comment = require('text!apps/comments/show/templates/comment.html');
 
-  return App.module('Comments.List', function(List){
+  return App.module('Comments.Show', function(Show){
 
-    List.Comment = Marionette.ItemView.extend({
+    Show.Comment = Marionette.ItemView.extend({
       template: Handlebars.compile( _comment ),
       className: function(){
         return 'item comment ' + this.model.get('size');

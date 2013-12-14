@@ -11,14 +11,18 @@ define(function(require){
 
       Socket.clientId = randomString(32);
 
-      socket.on('hello', function (data) {
+      socket.on('handshake', function (data) {
         console.log(data);
+        console.log('clientId is ', Socket.clientId);
+        socket.emit('clientId', {
+          clientId: Socket.clientId
+        });
       });
 
-      console.log('clientId is ', Socket.clientId);
-      socket.emit('clientId', {
-        clientId: Socket.clientId
-      });
+      // console.log('clientId is ', Socket.clientId);
+      // socket.emit('clientId', {
+      //   clientId: Socket.clientId
+      // });
 
       socket.on('newComment', function (data) {
         console.log('new comment event from socket fired');
@@ -34,11 +38,12 @@ define(function(require){
         socket.emit('openChat', clientId, chatId);
       });
 
-      App.on('client:newComment', function(comment){
+      App.on('comments:newComment', function(comment){
+        console.log('socket app recieving new comment event');
         socket.emit('client:newComment', comment);
       });
 
-      App.on('client:newMessage', function(message){
+      App.on('chatroom:newMessage', function(message){
         socket.emit('client:newMessage', message);
       });
     }
