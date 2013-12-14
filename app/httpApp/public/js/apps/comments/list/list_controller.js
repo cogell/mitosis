@@ -41,7 +41,9 @@ define(function(require){
             newComment.on('comment:submit', controller.newCommentSubmited)
 
             commentsView.on('itemview:expand', function(v, msg){
-              commentsView.pckryReload();
+              var context = this;
+              // commentsView.pckryReload();
+              commentsView.expandController(v, context);
             });
 
             App.on('socket:newComment', function(data){

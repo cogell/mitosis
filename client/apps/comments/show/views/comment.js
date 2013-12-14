@@ -1,6 +1,7 @@
 define(function(require){
 
   var App = require('app');
+  require('Handlebars');
   var _comment = require('text!apps/comments/show/templates/comment.html');
 
   return App.module('Comments.Show', function(Show){

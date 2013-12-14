@@ -22,31 +22,34 @@ define(function(require){
 
       className: 'comments-container',
 
+      initialize: function(){
+        this.on('itemview:expand', this.expandController, this);
+      },
       // packery
       onShow: function(){
-        this.pckryReload();
+        this.initPckry();
+        this.on('afterItemAdded', this.reflowPckry);
       },
-      onAfterItemAdded: function(itemView){
-        this.pckryReload();
-        this.on('itemview:expandClicked', this.expandController);
+      reflowPckry: function(){
+        this.pckry.layout();
       },
-      pckryReload: function(){
-        if (this.pckry){
-          this.pckry.packery('reload');
-        } else {
-          this.initPckry();
-        }
+      pckryFit: function(cv){
+        this.pckry.fit( cv.$el[0], 0, 0 );
+        // this.pckry.layoutItems( cv.$el[0] );
       },
       initPckry: function(){
-        // console.log('this.$el', this.$el);
-        this.pcky = new Packery(this.$el[0], {
-          // options
-          itemSelector: '.item',
+        this.pckry = new Packery(this.$el[0], {
+          itemSelector: '.comment',
           gutter: 0
         });
+
+        // debug
+        window.pckry = this.pckry;
       },
       expandController: function(cv, msg){
         // expand the comment and make it fit inplace
+        cv.$el.addClass('expanded');
+        this.pckryFit(cv);
       }
     })
 

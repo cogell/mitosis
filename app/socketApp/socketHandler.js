@@ -11,8 +11,8 @@ module.exports = function(socket, vent, clientSockets, chatMap, _){
     vent.emit('openChat', clientId, chatId);
   });
 
-  socket.on('disconnect', function(socket){
-    vent.emit('removeClient', socket);
+  socket.on('disconnect', function(){
+    vent.emit('removeClient', this);
   });
 
   socket.on('client:newComment', broadcastNewComment);

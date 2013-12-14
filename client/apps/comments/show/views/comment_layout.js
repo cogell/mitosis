@@ -1,6 +1,7 @@
 define(function(require){
 
   var App = require('app');
+  require('Handlebars');
   var _commentLayout = require('text!apps/comments/show/templates/comment_layout.html');
 
   return App.module('Comments.Show', function(Show){
@@ -13,12 +14,6 @@ define(function(require){
       regions: {
         commentRegion: '.comment-container',
         chatroomRegion: '.chatroom-container'
-      },
-      initialize: function(){
-        this.on('expand', this.onExpand);
-      },
-      onExpand: function(){
-        this.$el.addClass('expanded');
       }
     })
 

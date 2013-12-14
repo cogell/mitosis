@@ -32,7 +32,6 @@ vent.on('openChat', function(clientId, chatId){
   }
 
   // calling uniq to remove any duplicates
-  console.log('chatMap[clientID]: ', chatMap[chatId] );
   chatMap[chatId] = _.uniq( chatMap[chatId] );
 
   console.log('current chat map: ', chatMap );
@@ -41,11 +40,41 @@ vent.on('openChat', function(clientId, chatId){
 
 vent.on('removeClient', function(socket){
 
-  var client = _.filter(clientSockets, function(v){
-    return v == socket;
+  var client = _.each(clientSockets, function(v, k, l){
+    if ( v.id == socket.id){
+      vent.emit('closeChat', k)
+    }
   });
-  console.log('found this client to remove: ', client);
 
 });
+
+vent.on('closeChat', function(clientId){
+
+  _.each(chatMap, function(v, k, l){
+    // v is array of listening clientIds
+    chatMap[k] = filterOut(v, clientId);
+  });
+
+  console.log('current chat map is: ', chatMap);
+
+});
+
+function filterOut(array, string){
+
+  var x;
+  var i;
+  var len;
+  var results = [];
+
+  for( i=0, len = array.length; i < len; i++){
+    x = array[i];
+    if (x !== string){
+      results.push(x);
+    }
+  }
+
+  return results;
+}
+
 
 exports.start = start;
