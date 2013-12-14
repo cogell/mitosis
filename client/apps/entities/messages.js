@@ -10,9 +10,10 @@ define(function(require){
 
     Entities.Messages = Backbone.Collection.extend({
       url: function(){
-        if (this.forId){
-          return '/api/messages/for/' + this.forId
-        }
+        // if (this.forId){
+        //   return '/api/messages/for/' + this.forId
+        // }
+        return '/api/messages/for/' + 1
       },
       initialize: function(options){
         this.forId = options.forId

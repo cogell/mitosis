@@ -9,54 +9,65 @@ define(function(require){
   return App.module('Chatroom.Show', function(Show){
 
     Show.Controller = {
-      joinChat: function(id){
-        var controller = this;
-        controller.chatId = id;
+      showChat: function(id){
+        return this.getChatroomView(id);
+      },
+      getChatroomView: function(id){
 
-        controller.layout = new Show.Chatroom();
+        // init views
+        var layout = new Show.Chatroom();
         var newMessage = new Show.NewMessage({
-          model: new App.Entities.Message()
+          model: new App.Entities.Comment()
         });
 
-        // fetch chat messages
-        var fetchingMessages = App.request('entities:messages', id);
+        this.setHandlers( layout, newMessage, id );
 
-        return $.when(fetchingMessages).done(function(messages){
-          var messagesView;
+        return layout;
+      },
+      setHandlers: function( layout, newMessage, id ){
+        var controller = this;
 
-          if (messages !== undefined){
-            controller.collection = messages;
-            messagesView = new Show.Messages({
-              collection: messages
-            });
-          }
-          else {
-            controller.collection = [];
-            // handle the case where there are no messages
-          }
+        layout.on('render:newMessage', function(newMessage){
+          console.log('show new message');
 
-          App.trigger('socket:openChat', App.Socket.clientId, controller.chatId);
+          layout.messages.show( messagesView );
 
           newMessage.on('message:submit', controller.newMessageSubmited);
 
-          controller.layout.on('show', function(){
-            this.newMessage.show(newMessage);
-            this.messages.show(messagesView);
-          });
-
           App.on('socket:newMessage', function(message){
-            console.log('Chatroom controller recieved...');
-            console.log('message: ', message);
-            controller.collection.add(message);
-          });
+              console.log('Chatroom controller recieved...');
+              console.log('message: ', message);
+              controller.collection.add(message);
+            });
 
-          // return layout view OR show layout view
-          // App.chatRegion.show( controller.layout );
-
-          return controller.layout;
         });
 
+        layout.on('render:messages', function(id){
+          console.log('show messages');
 
+          var fetchingMessages = App.request('entities:messages', id);
+
+          $.when(fetchingMessages).done(function(messages){
+            var messagesView;
+
+            if (messages !== undefined){
+              controller.collection = messages;
+              messagesView = new Show.Messages({
+                collection: messages
+              });
+            }
+            else {
+              controller.collection = [];
+              // handle the case where there are no messages
+            }
+
+            App.trigger('socket:openChat', App.Socket.clientId, controller.chatId);
+
+            layout.messages.show( messagesView );
+
+          });
+
+        });
       },
       resetNewMessage: function(){
         var newMessage = new Show.NewMessage({
@@ -84,7 +95,8 @@ define(function(require){
           }
         });
       }
-    }
+
+    } // closes controller
 
   });
 

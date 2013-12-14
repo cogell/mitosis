@@ -10,6 +10,10 @@ define(function(require){
       regions: {
         messages: '.messages',
         newMessage: '.new-message'
+      },
+      onShow: function(e){
+        this.trigger('render:messages');
+        this.trigger('render:newMessage');
       }
     })
   });

@@ -24,7 +24,7 @@ define(function(require){
           // call out to app api for chatroom
           controller.chatroom = App.request('chatroom:show', 1);
 
-          console.log('on expandClicked, we see returne to us a view: ', controller.chatroom);
+          console.log('on expandClicked, we see returned to us a view: ', controller.chatroom);
 
           // coupled
           layout.chatroomRegion.show( controller.chatroom );

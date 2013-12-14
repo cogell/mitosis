@@ -6,8 +6,8 @@ define(function(require){
   return App.module('Chatroom', function(Chatroom){
 
     var API = {
-      joinChat: function(id){
-        return Chatroom.Show.Controller.joinChat(id);
+      showChat: function(id){
+        return Chatroom.Show.Controller.showChat(id);
       }
     }
 
@@ -16,7 +16,7 @@ define(function(require){
     // });
 
     App.reqres.setHandler('chatroom:show', function(id){
-      return API.joinChat(id);
+      return API.showChat(id);
     });
 
   });
