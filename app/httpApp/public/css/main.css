@@ -35,26 +35,51 @@ h1 {
   position: relative;
   background: white;
   margin-bottom: 20em; }
-  .comments .new-form {
+  .comments #new-comment .new-form {
     margin-bottom: 10em; }
-    .comments .new-form .new-comment {
+    .comments #new-comment .new-form .new-comment {
       width: 100%; }
-      .comments .new-form .new-comment textarea {
+      .comments #new-comment .new-form .new-comment textarea {
         resize: none;
         outline: none;
         overflow: auto;
         border-radius: 0; }
-    .comments .new-form .submit {
+    .comments #new-comment .new-form .submit {
       width: 100%;
       border-radius: 0; }
   .comments .comments-container {
     width: 100%;
-    font-size: 2.5rem; }
+    font-size: 3rem;
+    @keyframes upVote {
+      0% {
+        opacity: 1; }
+
+      50% {
+        opacity: 0.5; }
+
+      100% {
+        opacity: 1; } }
+ }
+    .comments .comments-container .comment.animate {
+      animation-name: upVote;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-delay: 0;
+      animation-play-state: running;
+      animation-fill-mode: forwards; }
     .comments .comments-container .comment.expanded {
+      font-size: 2rem;
       width: 100%;
       height: 400px; }
+      .comments .comments-container .comment.expanded .action .minus {
+        display: inline-block; }
+      .comments .comments-container .comment.expanded .action .plus {
+        display: none; }
     .comments .comments-container .comment {
       position: relative;
+      font-size: 2em;
       width: 1em;
       height: 1em;
       padding: 10px;
@@ -63,32 +88,59 @@ h1 {
       border-left: 1px solid white;
       border-right: 1px solid white; }
     .comments .comments-container .comment.small {
-      font-size: 2em; }
+      font-size: 4em; }
+      .comments .comments-container .comment.small .content {
+        font-size: 0.125em; }
+      .comments .comments-container .comment.small .comment-count a.vote:hover {
+        color: #232323; }
     .comments .comments-container .comment.medium {
       font-size: 4em;
       background: #6aceeb; }
+      .comments .comments-container .comment.medium .content {
+        font-size: 0.125em; }
     .comments .comments-container .comment.large {
       font-size: 8em;
       background: #30394f;
       color: white; }
+      .comments .comments-container .comment.large .content {
+        font-size: 0.09em; }
     .comments .comments-container .comment.big {
       font-size: 16em;
       background: #ff434c;
       color: white; }
+      .comments .comments-container .comment.big .content {
+        font-size: 0.0625em; }
     .comments .comments-container .comment .content {
-      font-size: 0.0625em; }
+      font-size: 0.125em; }
     .comments .comments-container .comment .comment-count {
       position: absolute;
       bottom: 10px; }
       .comments .comments-container .comment .comment-count p {
+        float: left;
         margin: 0; }
-    .comments .comments-container .comment .comment-expand {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
+      .comments .comments-container .comment .comment-count a.vote {
+        float: left;
+        color: grey;
+        margin: 7px 0 0 7px;
+        font-size: 0.8em; }
+        .comments .comments-container .comment .comment-count a.vote:hover {
+          color: white; }
+    .comments .comments-container .comment .action {
       cursor: pointer; }
+      .comments .comments-container .comment .action .minus {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: none; }
+      .comments .comments-container .comment .action .plus {
+        position: absolute;
+        bottom: 10px;
+        right: 10px; }
     .comments .comments-container .chatroom-container {
-      font-size: 1rem; }
+      overflow-y: auto;
+      font-size: 1rem;
+      background: white;
+      color: #232323; }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

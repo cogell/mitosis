@@ -8,6 +8,7 @@ define(function(require){
       url: '/api/comments/',
       initialize: function(){
         this.setSize();
+        this.on('upVote', this.upVoteHandler, this);
       },
       setSize: function(){
         this.set('size', 'zero');
@@ -24,6 +25,24 @@ define(function(require){
         else if (ups < 10000000){
           this.set('size', 'big');
         }
+      },
+      upVoteHandler: function(){
+        var currentVote = this.get('ups');
+        var newVote = currentVote + 1;
+
+        // TODO: authenticate up-vote
+        // request current user from Auth app
+        // check current user against model's vote map
+          // if not on map
+          // apply vote to model
+          // save model to server
+          // else
+          // do nothing
+
+        console.log('ups will now be: ', newVote);
+        this.set('ups', newVote);
+        this.setSize();
+
       }
     });
 

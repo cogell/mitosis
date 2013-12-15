@@ -51,7 +51,6 @@ define(function(require){
     App.on('initialize:before', initialize);
 
     function randomString(length){
-      console.log('Setting a new client Id...');
       var result = '';
       var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
       for (var i = length; i > 0 ; --i){

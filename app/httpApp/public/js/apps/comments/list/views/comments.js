@@ -3,9 +3,6 @@ define(function(require){
   var App = require('app');
   var packeryPkg = require('packeryPkg');
   var Packery = require('packery');
-  // require('Handlebars');
-  // require('apps/comments/list/views/comment');
-  // require('apps/comments/list/views/comment_layout');
 
   return App.module('Comments.List', function(List){
 
@@ -24,32 +21,39 @@ define(function(require){
 
       initialize: function(){
         this.on('itemview:expand', this.expandController, this);
+        this.on('itemview:shrink', this.shrinkController, this);
       },
-      // packery
       onShow: function(){
         this.initPckry();
-        this.on('afterItemAdded', this.reflowPckry);
+        this.on('after:item:added', this.appendItem, this);
+      },
+      appendItem: function(cv){
+        this.pckry.appended( cv.$el[0] );
       },
       reflowPckry: function(){
         this.pckry.layout();
       },
       pckryFit: function(cv){
         this.pckry.fit( cv.$el[0], 0, 0 );
-        // this.pckry.layoutItems( cv.$el[0] );
       },
       initPckry: function(){
         this.pckry = new Packery(this.$el[0], {
           itemSelector: '.comment',
           gutter: 0
         });
-
-        // debug
-        window.pckry = this.pckry;
       },
       expandController: function(cv, msg){
-        // expand the comment and make it fit inplace
         cv.$el.addClass('expanded');
         this.pckryFit(cv);
+      },
+      shrinkController: function(cv){
+        cv.$el.removeClass('expanded');
+
+        // testing out how to handle comment shrink
+        // this.pckry.remove( cv.$el[0] );
+        // this.pckry.appended( cv.$el[0] );
+        this.pckry.layout();
+
       }
     })
 

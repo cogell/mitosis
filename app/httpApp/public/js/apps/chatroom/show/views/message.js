@@ -6,7 +6,8 @@ define(function(require){
   return App.module('Chatroom.Show', function(Show){
 
     Show.Message = Marionette.ItemView.extend({
-      template: Handlebars.compile( _message )
+      template: Handlebars.compile( _message ),
+      className: 'row'
     })
 
   });

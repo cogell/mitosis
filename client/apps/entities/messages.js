@@ -17,7 +17,10 @@ define(function(require){
       },
       initialize: function(options){
         this.forId = options.forId
-      }
+      },
+      comparator: function(m){
+        // return (-1);
+      },
     })
     var API = {
       getMessageEntities: function(id){

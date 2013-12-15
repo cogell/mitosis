@@ -23,13 +23,22 @@ define(function(require){
 
         comment.on('expandClicked', function(){
 
-          // call out to app api for chatroom
           controller.chatroom = App.request('chatroom:show', 1);
-
           layout.trigger('expand');
-
-          // coupled
           layout.chatroomRegion.show( controller.chatroom );
+
+        });
+
+        comment.on('shrinkClicked', function(){
+
+          layout.trigger('shrink');
+          layout.chatroomRegion.close();
+
+        });
+
+        comment.on('voteClicked', function(){
+
+          this.model.trigger('upVote');
 
         });
 

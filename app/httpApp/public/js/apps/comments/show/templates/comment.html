@@ -1,11 +1,17 @@
 <div class="content comment-text">
-  <p>{{ body }}</p>
+  <p>"{{ body }}"</p>
 </div>
 <div class="content comment-count">
-  <p>{{ ups }}</p>
+  <p class="js-ups">{{ ups }}</p>
+  <a href="#" class="vote js-vote">
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  </a>
 </div>
-<div class="content comment-expand">
-  <a class="js-expand" href="#">
+<div class="content action">
+  <a class="plus js-expand" href="#">
     <span class="glyphicon glyphicon-plus"></span>
+  </a>
+  <a class="minus js-shrink" href="#">
+    <span class="glyphicon glyphicon-remove"></span>
   </a>
 </div>
