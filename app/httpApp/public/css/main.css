@@ -16,7 +16,7 @@ h1 {
   .post .header-img {
     position: fixed;
     top: 0;
-    max-height: 400px;
+    max-height: 600px;
     overflow: hidden; }
   .post .content {
     background: white;
@@ -33,107 +33,109 @@ h1 {
 
 #comments {
   position: relative;
-  background: white;
-  margin-bottom: 20em; }
-  #comments #new-comment-region .new-form {
-    margin-bottom: 10em; }
-    #comments #new-comment-region .new-form .new-comment {
-      width: 100%; }
-      #comments #new-comment-region .new-form .new-comment textarea {
-        resize: none;
-        outline: none;
-        overflow: auto;
+  background: transparent; }
+  #comments #new-comment-region {
+    background: white; }
+    #comments #new-comment-region .new-form {
+      margin-bottom: 5em; }
+      #comments #new-comment-region .new-form .new-comment {
+        width: 100%; }
+        #comments #new-comment-region .new-form .new-comment textarea {
+          resize: none;
+          outline: none;
+          overflow: auto;
+          border-radius: 0; }
+      #comments #new-comment-region .new-form .submit {
+        width: 100%;
         border-radius: 0; }
-    #comments #new-comment-region .new-form .submit {
+  #comments .comments-region {
+    background: url('/img/beautiful_nature.jpg');
+    padding-top: 0.1em;
+    padding-bottom: 20em; }
+    #comments .comments-region .comments-container {
       width: 100%;
-      border-radius: 0; }
-  #comments .comments-container {
-    width: 100%;
-    font-size: 3rem; }
-    #comments .comments-container .comment {
-      position: relative;
-      font-size: 4em;
-      width: 1em;
-      height: 1em;
-      padding: 10px;
-      background: #ede8df;
-      border-top: 1px solid white;
-      border-left: 1px solid white;
-      border-right: 1px solid white;
-      overflow: hidden;
-      text-overflow: ellipsis; }
-    #comments .comments-container .comment.small {
-      font-size: 4em; }
-      #comments .comments-container .comment.small .content {
-        font-size: 0.08em; }
-      #comments .comments-container .comment.small .comment-count a.vote:hover {
-        color: #232323; }
-    #comments .comments-container .comment.medium {
-      font-size: 6em;
-      background: #6aceeb; }
-      #comments .comments-container .comment.medium .content {
-        font-size: 0.08em; }
-    #comments .comments-container .comment.large {
-      font-size: 8em;
-      background: #30394f;
-      color: white; }
-      #comments .comments-container .comment.large .content {
-        font-size: 0.09em; }
-    #comments .comments-container .comment.big {
-      font-size: 10em;
-      background: #ff434c;
-      color: white; }
-      #comments .comments-container .comment.big .content {
-        font-size: 0.0625em; }
-    #comments .comments-container .comment .content {
-      font-size: 0.125em; }
-    #comments .comments-container .comment .comment-text {
-      height: 10em; }
-      #comments .comments-container .comment .comment-text p {
+      font-size: 3rem; }
+      #comments .comments-region .comments-container .comment {
+        position: relative;
+        font-size: 4em;
+        width: 1em;
+        height: 1em;
+        padding: 10px;
+        background: #ede8df;
         overflow: hidden;
         text-overflow: ellipsis; }
-    #comments .comments-container .comment .comment-count {
-      position: absolute;
-      bottom: 10px; }
-      #comments .comments-container .comment .comment-count p {
-        float: left;
-        margin: 0; }
-      #comments .comments-container .comment .comment-count a.vote {
-        float: left;
-        color: grey;
-        margin: 7px 0 0 7px;
-        font-size: 0.8em; }
-        #comments .comments-container .comment .comment-count a.vote:hover {
-          color: white; }
-    #comments .comments-container .comment .action {
-      cursor: pointer; }
-      #comments .comments-container .comment .action .minus {
+      #comments .comments-region .comments-container .comment.small {
+        font-size: 4em; }
+        #comments .comments-region .comments-container .comment.small .content {
+          font-size: 0.08em; }
+        #comments .comments-region .comments-container .comment.small .comment-count a.vote:hover {
+          color: #232323; }
+      #comments .comments-region .comments-container .comment.medium {
+        font-size: 6em;
+        background: #6aceeb; }
+        #comments .comments-region .comments-container .comment.medium .content {
+          font-size: 0.08em; }
+      #comments .comments-region .comments-container .comment.large {
+        font-size: 8em;
+        background: #30394f;
+        color: white; }
+        #comments .comments-region .comments-container .comment.large .content {
+          font-size: 0.09em; }
+      #comments .comments-region .comments-container .comment.big {
+        font-size: 10em;
+        background: #ff434c;
+        color: white; }
+        #comments .comments-region .comments-container .comment.big .content {
+          font-size: 0.0625em; }
+      #comments .comments-region .comments-container .comment .content {
+        font-size: 0.125em; }
+      #comments .comments-region .comments-container .comment .comment-text {
+        height: 10em; }
+        #comments .comments-region .comments-container .comment .comment-text p {
+          overflow: hidden;
+          text-overflow: ellipsis; }
+      #comments .comments-region .comments-container .comment .comment-count {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        display: none; }
-      #comments .comments-container .comment .action .plus {
-        position: absolute;
-        bottom: 10px;
-        right: 10px; }
-    #comments .comments-container .comment.animate {
-      -webkit-animation: up-vote 1s ease-out;
-      -moz-animation: up-vote 1s ease-out;
-      -o-animation: up-vote 1s ease-out;
-      animation: up-vote 1s ease-out; }
-    #comments .comments-container .comment.expanded {
-      font-size: 2rem;
-      width: 100%;
-      height: 400px; }
-      #comments .comments-container .comment.expanded .action .minus {
-        display: inline-block; }
-      #comments .comments-container .comment.expanded .action .plus {
-        display: none; }
-    #comments .comments-container .chatroom-container {
-      overflow-y: auto;
-      font-size: 1rem;
-      background: white;
-      color: #232323; }
+        bottom: 10px; }
+        #comments .comments-region .comments-container .comment .comment-count p {
+          float: left;
+          margin: 0; }
+        #comments .comments-region .comments-container .comment .comment-count a.vote {
+          float: left;
+          color: grey;
+          margin: 7px 0 0 7px;
+          font-size: 0.8em; }
+          #comments .comments-region .comments-container .comment .comment-count a.vote:hover {
+            color: white; }
+      #comments .comments-region .comments-container .comment .action {
+        cursor: pointer; }
+        #comments .comments-region .comments-container .comment .action .minus {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: none; }
+        #comments .comments-region .comments-container .comment .action .plus {
+          position: absolute;
+          bottom: 10px;
+          right: 10px; }
+      #comments .comments-region .comments-container .comment.animate {
+        -webkit-animation: up-vote 1s ease-out;
+        -moz-animation: up-vote 1s ease-out;
+        -o-animation: up-vote 1s ease-out;
+        animation: up-vote 1s ease-out; }
+      #comments .comments-region .comments-container .comment.expanded {
+        font-size: 2rem;
+        width: 100%;
+        height: 400px; }
+        #comments .comments-region .comments-container .comment.expanded .action .minus {
+          display: inline-block; }
+        #comments .comments-region .comments-container .comment.expanded .action .plus {
+          display: none; }
+      #comments .comments-region .comments-container .chatroom-container {
+        overflow-y: auto;
+        font-size: 1rem;
+        background: white;
+        color: #232323; }
 
 @-webkit-keyframes up-vote {
   0% {

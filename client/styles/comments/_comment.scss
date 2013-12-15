@@ -2,7 +2,6 @@
   width: 100%;
   font-size: 3rem;
 
-
   // Default state
   .comment {
     position: relative;
@@ -13,9 +12,7 @@
 
     padding: 10px;
     background: $off-white;
-    border-top: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    // border: 1px solid rgba(255,255,255,0.1);
 
     overflow: hidden;
     text-overflow: ellipsis;

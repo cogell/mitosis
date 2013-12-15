@@ -20,7 +20,9 @@ define(function(require){
       },
       onShow: function(){
         this.stickit();
-        this.$el.find('.comment-text').dotdotdot();
+        this.$el.find('.comment-text').dotdotdot({
+          watch: true,
+        });
       },
       expandClicked: function(e){
         e.preventDefault();

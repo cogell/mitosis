@@ -46,6 +46,11 @@ define(function(require){
               commentsView.expandController(v, context);
             });
 
+            commentsView.on('pruning', function(models){
+              console.log('remove these models: ', models);
+              controller.collection.remove(models);
+            });
+
             App.on('socket:newComment', function(data){
               console.log('Comments.List received a new comment from the socket: ', data);
               List.Controller.collection.add( data )

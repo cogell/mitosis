@@ -23,6 +23,8 @@ define(function(require){
         this.on('itemview:expand', this.expandController, this);
         this.on('itemview:shrink', this.shrinkController, this);
         this.on('itemview:resize', this.resizeController, this);
+
+        this.pruneLowComments();
       },
       onShow: function(){
         this.initPckry();
@@ -37,7 +39,7 @@ define(function(require){
       initPckry: function(){
         this.pckry = new Packery(this.$el[0], {
           itemSelector: '.comment',
-          gutter: 0
+          gutter: 1
         });
       },
       expandController: function(cv, msg){
@@ -47,10 +49,18 @@ define(function(require){
       shrinkController: function(cv){
         cv.$el.removeClass('expanded');
         this.pckry.layout();
-
       },
       resizeController: function(cv){
         this.pckry.fit( cv.el );
+      },
+      pruneLowComments: function(){
+        var that = this;
+        setInterval(function(){
+          var toRemove = that.collection.filter(function(model){
+            return model.get('ups') == 0;
+          });
+          that.trigger('pruning', toRemove);
+        }, 10000)
       }
     })
 

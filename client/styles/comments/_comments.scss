@@ -1,11 +1,19 @@
 #comments {
   position: relative;
-  background: white;
+  background: transparent;
 
-  margin-bottom: 20em;
+  #new-comment-region{
+    background: white;
 
-  @import 'new_comment';
+    @import 'new_comment';
+  }
 
-  @import 'comment';
+  .comments-region{
+    background: url('/img/beautiful_nature.jpg');
+    padding-top: 0.1em;
+    padding-bottom: 20em;
+
+    @import 'comment';
+  }
 
 }
