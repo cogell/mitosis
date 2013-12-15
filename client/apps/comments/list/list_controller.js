@@ -34,8 +34,8 @@ define(function(require){
             })
 
             controller.layout.on('show', function(){
-              this.newComment.show( newComment );
-              this.comments.show( commentsView );
+              this.newCommentRegion.show( newComment );
+              this.commentsRegion.show( commentsView );
             });
 
             newComment.on('comment:submit', controller.newCommentSubmited)
@@ -67,7 +67,7 @@ define(function(require){
           model: new App.Entities.Comment()
         });
         newComment.on('comment:submit', List.Controller.newCommentSubmited)
-        this.layout.newComment.show( newComment );
+        this.layout.newCommentRegion.show( newComment );
       },
       newCommentSubmited: function(){
         console.log('about to save new comment...');

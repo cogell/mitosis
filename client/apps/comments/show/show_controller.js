@@ -38,6 +38,7 @@ define(function(require){
 
         comment.on('voteClicked', function(){
 
+          layout.trigger('upVote');
           this.model.trigger('upVote');
 
         });

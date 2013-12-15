@@ -14,6 +14,25 @@ define(function(require){
       regions: {
         commentRegion: '.comment-container',
         chatroomRegion: '.chatroom-container'
+      },
+      initialize: function(){
+        this.on('upVote', this.upVoteHandler, this);
+      },
+      upVoteHandler: function(){
+        var that = this;
+
+        this.$el.addClass('animate');
+
+        setTimeout(function(){
+          that.$el.removeClass('animate');
+        }, 1000);
+
+        // this.el.addEventListener("animationend", this.upVoteAnimEnd, false);
+      },
+      upVoteAnimEnd: function(){
+        console.log('comment animation is over');
+        // this.$el.removeEventListener("animationiteration", upVoteAnimEnd);
+        this.$el.removeClass('animate');
       }
     })
 

@@ -10,8 +10,8 @@ define(function(require){
       template: Handlebars.compile( _comments_layout ),
       className: 'comments',
       regions: {
-        newComment: '#new-comment',
-        comments: '.comments-container'
+        newCommentRegion: '#new-comment-region',
+        commentsRegion: '.comments-region'
       }
 
     });

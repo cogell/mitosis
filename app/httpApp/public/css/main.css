@@ -31,55 +31,28 @@ h1 {
     .post .content blockquote p {
       font-size: 1.4em; }
 
-.comments {
+#comments {
   position: relative;
   background: white;
   margin-bottom: 20em; }
-  .comments #new-comment .new-form {
+  #comments #new-comment-region .new-form {
     margin-bottom: 10em; }
-    .comments #new-comment .new-form .new-comment {
+    #comments #new-comment-region .new-form .new-comment {
       width: 100%; }
-      .comments #new-comment .new-form .new-comment textarea {
+      #comments #new-comment-region .new-form .new-comment textarea {
         resize: none;
         outline: none;
         overflow: auto;
         border-radius: 0; }
-    .comments #new-comment .new-form .submit {
+    #comments #new-comment-region .new-form .submit {
       width: 100%;
       border-radius: 0; }
-  .comments .comments-container {
+  #comments .comments-container {
     width: 100%;
-    font-size: 3rem;
-    @keyframes upVote {
-      0% {
-        opacity: 1; }
-
-      50% {
-        opacity: 0.5; }
-
-      100% {
-        opacity: 1; } }
- }
-    .comments .comments-container .comment.animate {
-      animation-name: upVote;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-delay: 0;
-      animation-play-state: running;
-      animation-fill-mode: forwards; }
-    .comments .comments-container .comment.expanded {
-      font-size: 2rem;
-      width: 100%;
-      height: 400px; }
-      .comments .comments-container .comment.expanded .action .minus {
-        display: inline-block; }
-      .comments .comments-container .comment.expanded .action .plus {
-        display: none; }
-    .comments .comments-container .comment {
+    font-size: 3rem; }
+    #comments .comments-container .comment {
       position: relative;
-      font-size: 2em;
+      font-size: 4em;
       width: 1em;
       height: 1em;
       padding: 10px;
@@ -87,60 +60,94 @@ h1 {
       border-top: 1px solid white;
       border-left: 1px solid white;
       border-right: 1px solid white; }
-    .comments .comments-container .comment.small {
+    #comments .comments-container .comment.small {
       font-size: 4em; }
-      .comments .comments-container .comment.small .content {
+      #comments .comments-container .comment.small .content {
         font-size: 0.125em; }
-      .comments .comments-container .comment.small .comment-count a.vote:hover {
+      #comments .comments-container .comment.small .comment-count a.vote:hover {
         color: #232323; }
-    .comments .comments-container .comment.medium {
+    #comments .comments-container .comment.medium {
       font-size: 4em;
       background: #6aceeb; }
-      .comments .comments-container .comment.medium .content {
+      #comments .comments-container .comment.medium .content {
         font-size: 0.125em; }
-    .comments .comments-container .comment.large {
+    #comments .comments-container .comment.large {
       font-size: 8em;
       background: #30394f;
       color: white; }
-      .comments .comments-container .comment.large .content {
+      #comments .comments-container .comment.large .content {
         font-size: 0.09em; }
-    .comments .comments-container .comment.big {
+    #comments .comments-container .comment.big {
       font-size: 16em;
       background: #ff434c;
       color: white; }
-      .comments .comments-container .comment.big .content {
+      #comments .comments-container .comment.big .content {
         font-size: 0.0625em; }
-    .comments .comments-container .comment .content {
+    #comments .comments-container .comment .content {
       font-size: 0.125em; }
-    .comments .comments-container .comment .comment-count {
+    #comments .comments-container .comment .comment-count {
       position: absolute;
       bottom: 10px; }
-      .comments .comments-container .comment .comment-count p {
+      #comments .comments-container .comment .comment-count p {
         float: left;
         margin: 0; }
-      .comments .comments-container .comment .comment-count a.vote {
+      #comments .comments-container .comment .comment-count a.vote {
         float: left;
         color: grey;
         margin: 7px 0 0 7px;
         font-size: 0.8em; }
-        .comments .comments-container .comment .comment-count a.vote:hover {
+        #comments .comments-container .comment .comment-count a.vote:hover {
           color: white; }
-    .comments .comments-container .comment .action {
+    #comments .comments-container .comment .action {
       cursor: pointer; }
-      .comments .comments-container .comment .action .minus {
+      #comments .comments-container .comment .action .minus {
         position: absolute;
         top: 10px;
         right: 10px;
         display: none; }
-      .comments .comments-container .comment .action .plus {
+      #comments .comments-container .comment .action .plus {
         position: absolute;
         bottom: 10px;
         right: 10px; }
-    .comments .comments-container .chatroom-container {
+    #comments .comments-container .comment.animate {
+      -webkit-animation: up-vote 1s ease;
+      -moz-animation: up-vote 1s ease;
+      -o-animation: up-vote 1s ease;
+      animation: up-vote 1s ease; }
+    #comments .comments-container .comment.expanded {
+      font-size: 2rem;
+      width: 100%;
+      height: 400px; }
+      #comments .comments-container .comment.expanded .action .minus {
+        display: inline-block; }
+      #comments .comments-container .comment.expanded .action .plus {
+        display: none; }
+    #comments .comments-container .chatroom-container {
       overflow-y: auto;
       font-size: 1rem;
       background: white;
       color: #232323; }
+
+@-webkit-keyframes up-vote {
+  0% {
+    opacity: 0.8; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes up-vote {
+  0% {
+    opacity: 0.8; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes up-vote {
+  0% {
+    opacity: 0.8; }
+
+  100% {
+    opacity: 1; } }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

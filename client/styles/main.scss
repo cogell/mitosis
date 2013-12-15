@@ -1,9 +1,12 @@
+@import 'mixins';
 @import 'variables';
 @import 'typography';
 
 @import 'header';
 @import 'article';
 @import 'comments/comments';
+
+@import 'animations/up_vote';
 
 
 // Global Styles
