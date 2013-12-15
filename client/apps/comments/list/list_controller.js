@@ -47,8 +47,9 @@ define(function(require){
             });
 
             commentsView.on('pruning', function(models){
-              console.log('remove these models: ', models);
+              console.log('Removing all comments with zero votes.');
               controller.collection.remove(models);
+              this.reflowPckry(); // coupled
             });
 
             App.on('socket:newComment', function(data){

@@ -24,7 +24,9 @@ define(function(require){
         this.on('itemview:shrink', this.shrinkController, this);
         this.on('itemview:resize', this.resizeController, this);
 
+        // Stubbing in interactions
         this.pruneLowComments();
+        this.randomVotes();
       },
       onShow: function(){
         this.initPckry();
@@ -53,6 +55,8 @@ define(function(require){
       resizeController: function(cv){
         this.pckry.fit( cv.el );
       },
+
+      // Stubbing in interactions
       pruneLowComments: function(){
         var that = this;
         setInterval(function(){
@@ -61,7 +65,16 @@ define(function(require){
           });
           that.trigger('pruning', toRemove);
         }, 10000)
+      },
+
+      randomVotes: function(){
+        var that = this;
+        // set interval
+        // choose a random model
+        // trigger the vote method on that model
       }
+
+
     })
 
   });

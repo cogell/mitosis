@@ -24,7 +24,7 @@ define(function(require){
         else if (ups < 10){
           this.set('size', 'medium');
         }
-        else if (ups < 50){
+        else if (ups < 25){
           this.set('size', 'large');
         }
         else if (ups < 10000000){
