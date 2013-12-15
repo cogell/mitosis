@@ -16,4 +16,15 @@
     @import 'comment';
   }
 
+  .stats-region {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: grey;
+    // padding: 5px;
+    opacity: 0.9;
+
+    @improt 'stats';
+  }
+
 }

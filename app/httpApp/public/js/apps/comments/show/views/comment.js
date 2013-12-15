@@ -17,6 +17,8 @@ define(function(require){
         'click .js-expand': 'expandClicked',
         'click .js-shrink': 'shrinkClicked',
         'click .js-vote': 'voteClicked',
+        'click .js-join': 'expandClicked',
+        'click .js-show-stats': 'statsClicked',
 
         'mouseover .js-vote': 'toolHovered',
         'mouseover .js-join': 'toolHovered',
@@ -42,6 +44,16 @@ define(function(require){
       voteClicked: function(e){
         e.preventDefault();
         this.trigger('voteClicked');
+      },
+      statsClicked: function(e){
+        e.preventDefault();
+        if (!this.statsShown){
+          this.statsShown = true;
+          this.trigger('statsShow');
+        } else {
+          this.statsShown = false;
+          this.trigger('statsHide');
+        }
       },
 
       // voting tooltips

@@ -142,6 +142,13 @@ h1 {
         font-size: 1rem;
         background: white;
         color: #232323; }
+  #comments .stats-region {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: grey;
+    opacity: 0.9;
+    @improt 'stats'; }
 
 @-webkit-keyframes up-vote {
   0% {

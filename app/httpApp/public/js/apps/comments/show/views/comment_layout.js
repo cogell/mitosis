@@ -12,8 +12,9 @@ define(function(require){
         return 'item comment ' + this.model.get('size');
       },
       regions: {
-        commentRegion: '.comment-container',
-        chatroomRegion: '.chatroom-container'
+        commentRegion: '.comment-region',
+        chatroomRegion: '.chatroom-region',
+        statsRegion: '.stats-region'
       },
       initialize: function(){
         this.on('upVote', this.upVoteHandler, this);
