@@ -2,10 +2,27 @@
   <p>"{{ body }}"</p>
 </div>
 <div class="content comment-count">
-  <p class="js-ups">{{ ups }}</p>
-  <a href="#" class="vote js-vote">
-    <span class="glyphicon glyphicon-thumbs-up"></span>
-  </a>
+
+  <div class="wrapper">
+    <p class="js-ups">{{ ups }}</p>
+    <a href="#" class="vote js-vote" data-toggle="tooltip" title="Up voting keeps comments from being pruned.">
+      <i class="fa fa-thumbs-up fa-1"></i>
+    </a>
+  </div>
+
+  <div class="wrapper">
+    <p class="js-people">{{ peopleCount }}</p>
+    <a href="#" class="people js-join" data-toggle="tooltip" title="Number of people in this chat.">
+      <i class="fa fa-comments fa-1"></i>
+    </a>
+  </div>
+
+  <div class="wrapper">
+    <a href="#" class="stats js-show-stats" data-toggle="tooltip" title="View stats on comment's chat history.">
+      <i class="fa fa-bar-chart-o fa-1"></i>
+    </a>
+  </div>
+
 </div>
 <div class="content action">
   <a class="plus js-expand" href="#">

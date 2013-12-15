@@ -94,19 +94,6 @@ h1 {
         #comments .comments-region .comments-container .comment .comment-text p {
           overflow: hidden;
           text-overflow: ellipsis; }
-      #comments .comments-region .comments-container .comment .comment-count {
-        position: absolute;
-        bottom: 10px; }
-        #comments .comments-region .comments-container .comment .comment-count p {
-          float: left;
-          margin: 0; }
-        #comments .comments-region .comments-container .comment .comment-count a.vote {
-          float: left;
-          color: grey;
-          margin: 7px 0 0 7px;
-          font-size: 0.8em; }
-          #comments .comments-region .comments-container .comment .comment-count a.vote:hover {
-            color: white; }
       #comments .comments-region .comments-container .comment .action {
         cursor: pointer; }
         #comments .comments-region .comments-container .comment .action .minus {
@@ -118,6 +105,25 @@ h1 {
           position: absolute;
           bottom: 10px;
           right: 10px; }
+      #comments .comments-region .comments-container .comment .comment-count {
+        position: absolute;
+        bottom: 10px; }
+        #comments .comments-region .comments-container .comment .comment-count .wrapper {
+          float: left;
+          margin-right: 10px; }
+          #comments .comments-region .comments-container .comment .comment-count .wrapper p {
+            font-size: 0.8em;
+            float: left;
+            margin: 0 4px 0 0; }
+          #comments .comments-region .comments-container .comment .comment-count .wrapper a {
+            float: left;
+            color: grey;
+            font-size: 0.8em; }
+            #comments .comments-region .comments-container .comment .comment-count .wrapper a:hover {
+              color: white; }
+      #comments .comments-region .comments-container .tooltip {
+        width: 100px;
+        z-index: 9999; }
       #comments .comments-region .comments-container .comment.animate {
         -webkit-animation: up-vote 1s ease-out;
         -moz-animation: up-vote 1s ease-out;

@@ -17,12 +17,19 @@ define(function(require){
         'click .js-expand': 'expandClicked',
         'click .js-shrink': 'shrinkClicked',
         'click .js-vote': 'voteClicked',
+
+        'mouseover .js-vote': 'toolHovered',
+        'mouseover .js-join': 'toolHovered',
+        'mouseover .js-show-stats': 'toolHovered'
       },
       onShow: function(){
         this.stickit();
         this.$el.find('.comment-text').dotdotdot({
           watch: true,
         });
+
+        this.initTooltips();
+        this.on('hideToolTips', this.hideToolTips, this);
       },
       expandClicked: function(e){
         e.preventDefault();
@@ -35,7 +42,25 @@ define(function(require){
       voteClicked: function(e){
         e.preventDefault();
         this.trigger('voteClicked');
+      },
+
+      // voting tooltips
+      initTooltips:function(){
+        this.voteTool = this.$el.find('.js-vote').tooltip();
+
+        this.peopleTool = this.$el.find('.js-join').tooltip();
+
+        this.statsTool = this.$el.find('.js-show-stats').tooltip();
+      },
+      toolHovered: function(){
+        this.trigger('toolhovered');
+      },
+      hideToolTips:function(){
+        this.voteTool.tooltip('hide');
+        this.peopleTool.tooltip('hide');
+        this.statsTool.tooltip('hide');
       }
+
 
     })
 

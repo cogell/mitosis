@@ -43,6 +43,14 @@ define(function(require){
 
         });
 
+        comment.on('toolhovered', function(){
+          layout.trigger('toolhovered');
+        });
+
+        layout.on('hideToolTips', function(){
+          comment.trigger('hideToolTips');
+        });
+
         return layout;
       }
     }

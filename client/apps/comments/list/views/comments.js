@@ -29,6 +29,10 @@ define(function(require){
         // Stubbing in interactions
         this.pruneLowComments();
         this.randomVotes();
+
+        // Adding in tooltips
+        this.toolHoverCount = 0;
+        this.on('itemview:toolhovered', this.toolHovered, this);
       },
       onShow: function(){
         this.initPckry();
@@ -68,12 +72,22 @@ define(function(require){
           that.trigger('pruning', toRemove);
         }, 30000)
       },
-
       randomVotes: function(){
         var that = this;
         // set interval
         // choose a random model
         // trigger the vote method on that model
+      },
+
+      toolHovered: function(){
+        console.log('this hover count ', this.toolHoverCount);
+        if(this.toolHoverCount >= 8){
+          this.children.each(function(cv){
+            cv.trigger('hideToolTips');
+          });
+        } else {
+          this.toolHoverCount ++;
+        }
       }
 
 
