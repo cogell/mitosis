@@ -18,6 +18,9 @@ define(function(require){
       initialize: function(){
         this.on('upVote', this.upVoteHandler, this);
       },
+      onShow:function(){
+        this.model.on('newSize', this.updateSize, this);
+      },
       upVoteHandler: function(){
         var that = this;
 
@@ -29,10 +32,10 @@ define(function(require){
 
         // this.el.addEventListener("animationend", this.upVoteAnimEnd, false);
       },
-      upVoteAnimEnd: function(){
-        console.log('comment animation is over');
-        // this.$el.removeEventListener("animationiteration", upVoteAnimEnd);
-        this.$el.removeClass('animate');
+      updateSize: function(oldSize){
+        this.$el.removeClass( oldSize );
+        this.$el.addClass( this.model.get('size') );
+        this.trigger('resize');
       }
     })
 

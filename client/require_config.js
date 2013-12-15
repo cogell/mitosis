@@ -15,6 +15,7 @@ require.config({
 
     // nice-to-haves
     'backbone.stickit': 'vendor/backbone.stickit/backbone.stickit',
+    'jquery.dotdotdot': 'vendor/jquery.dotdotdot/src/js/jquery.dotdotdot',
 
     // packery
     packeryPkg: 'vendor/packery.pkgd',
@@ -38,6 +39,9 @@ require.config({
     },
     'backbone.stickit': {
       deps: ['jquery', 'underscore', 'backbone']
+    },
+    'jquery.dotdotdot': {
+      deps: ['jquery']
     }
   }
 });

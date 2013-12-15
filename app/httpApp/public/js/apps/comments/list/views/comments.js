@@ -22,6 +22,7 @@ define(function(require){
       initialize: function(){
         this.on('itemview:expand', this.expandController, this);
         this.on('itemview:shrink', this.shrinkController, this);
+        this.on('itemview:resize', this.resizeController, this);
       },
       onShow: function(){
         this.initPckry();
@@ -33,9 +34,6 @@ define(function(require){
       reflowPckry: function(){
         this.pckry.layout();
       },
-      pckryFit: function(cv){
-        this.pckry.fit( cv.$el[0], 0, 0 );
-      },
       initPckry: function(){
         this.pckry = new Packery(this.$el[0], {
           itemSelector: '.comment',
@@ -44,16 +42,15 @@ define(function(require){
       },
       expandController: function(cv, msg){
         cv.$el.addClass('expanded');
-        this.pckryFit(cv);
+        this.pckry.fit(cv.$el[0], 0, 0);
       },
       shrinkController: function(cv){
         cv.$el.removeClass('expanded');
-
-        // testing out how to handle comment shrink
-        // this.pckry.remove( cv.$el[0] );
-        // this.pckry.appended( cv.$el[0] );
         this.pckry.layout();
 
+      },
+      resizeController: function(cv){
+        this.pckry.fit( cv.el );
       }
     })
 

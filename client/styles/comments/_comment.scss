@@ -16,23 +16,26 @@
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid white;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   // Size states
   .comment.small {
     font-size: 4em;
     .content {
-      font-size: 0.125em;
+      font-size: 0.08em;
     }
     .comment-count a.vote:hover {
       color: $black;
     }
   }
   .comment.medium {
-    font-size: 4em;
+    font-size: 6em;
     background: $light-blue;
     .content {
-      font-size: 0.125em;
+      font-size: 0.08em;
     }
   }
   .comment.large {
@@ -44,7 +47,7 @@
     }
   }
   .comment.big {
-    font-size: 16em;
+    font-size: 10em;
     background: $red;
     color: white;
     .content {
@@ -57,7 +60,14 @@
     .content {
       font-size: 0.125em;
     }
-    .comment-body { }
+    .comment-text {
+      height: 10em;
+      // overflow: hidden;
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
     .comment-count {
       position: absolute;
       bottom: 10px;

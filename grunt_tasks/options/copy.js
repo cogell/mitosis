@@ -24,6 +24,7 @@ module.exports = {
 
         // nice-to-haves
         'backbone.stickit/backbone.stickit.js',
+        'jquery.dotdotdot/src/js/jquery.dotdotdot.js',
 
         // packery
         'packery/js/packery.js',

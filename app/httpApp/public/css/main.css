@@ -59,18 +59,20 @@ h1 {
       background: #ede8df;
       border-top: 1px solid white;
       border-left: 1px solid white;
-      border-right: 1px solid white; }
+      border-right: 1px solid white;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     #comments .comments-container .comment.small {
       font-size: 4em; }
       #comments .comments-container .comment.small .content {
-        font-size: 0.125em; }
+        font-size: 0.08em; }
       #comments .comments-container .comment.small .comment-count a.vote:hover {
         color: #232323; }
     #comments .comments-container .comment.medium {
-      font-size: 4em;
+      font-size: 6em;
       background: #6aceeb; }
       #comments .comments-container .comment.medium .content {
-        font-size: 0.125em; }
+        font-size: 0.08em; }
     #comments .comments-container .comment.large {
       font-size: 8em;
       background: #30394f;
@@ -78,13 +80,18 @@ h1 {
       #comments .comments-container .comment.large .content {
         font-size: 0.09em; }
     #comments .comments-container .comment.big {
-      font-size: 16em;
+      font-size: 10em;
       background: #ff434c;
       color: white; }
       #comments .comments-container .comment.big .content {
         font-size: 0.0625em; }
     #comments .comments-container .comment .content {
       font-size: 0.125em; }
+    #comments .comments-container .comment .comment-text {
+      height: 10em; }
+      #comments .comments-container .comment .comment-text p {
+        overflow: hidden;
+        text-overflow: ellipsis; }
     #comments .comments-container .comment .comment-count {
       position: absolute;
       bottom: 10px; }
@@ -110,10 +117,10 @@ h1 {
         bottom: 10px;
         right: 10px; }
     #comments .comments-container .comment.animate {
-      -webkit-animation: up-vote 1s ease;
-      -moz-animation: up-vote 1s ease;
-      -o-animation: up-vote 1s ease;
-      animation: up-vote 1s ease; }
+      -webkit-animation: up-vote 1s ease-out;
+      -moz-animation: up-vote 1s ease-out;
+      -o-animation: up-vote 1s ease-out;
+      animation: up-vote 1s ease-out; }
     #comments .comments-container .comment.expanded {
       font-size: 2rem;
       width: 100%;
@@ -130,21 +137,21 @@ h1 {
 
 @-webkit-keyframes up-vote {
   0% {
-    opacity: 0.8; }
+    opacity: 0.7; }
 
   100% {
     opacity: 1; } }
 
 @-moz-keyframes up-vote {
   0% {
-    opacity: 0.8; }
+    opacity: 0.7; }
 
   100% {
     opacity: 1; } }
 
 @-o-keyframes up-vote {
   0% {
-    opacity: 0.8; }
+    opacity: 0.7; }
 
   100% {
     opacity: 1; } }

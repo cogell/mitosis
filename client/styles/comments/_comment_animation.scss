@@ -1,6 +1,6 @@
 .comment.animate {
 
-  @include animation(up-vote 1s ease);
+  @include animation(up-vote 1s ease-out);
   // animation-name: upvote;
   // animation-duration: 1s;
   // animation-timing-function: ease;

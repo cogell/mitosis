@@ -33,6 +33,7 @@
     "text": "~2.0.10",
     "marionette": "~1.4.1",
     "backbone.stickit": "~0.6.3",
-    "socket.io-client": "~0.9.16"
+    "socket.io-client": "~0.9.16",
+    "jquery.dotdotdot": "~1.6.10"
   }
 }

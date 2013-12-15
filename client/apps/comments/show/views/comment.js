@@ -2,6 +2,7 @@ define(function(require){
 
   var App = require('app');
   require('backbone.stickit');
+  require('jquery.dotdotdot');
   require('Handlebars');
   var _comment = require('text!apps/comments/show/templates/comment.html');
 
@@ -19,6 +20,7 @@ define(function(require){
       },
       onShow: function(){
         this.stickit();
+        this.$el.find('.comment-text').dotdotdot();
       },
       expandClicked: function(e){
         e.preventDefault();

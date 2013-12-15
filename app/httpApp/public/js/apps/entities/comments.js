@@ -6,12 +6,17 @@ define(function(require){
 
     Entities.Comment = Backbone.Model.extend({
       url: '/api/comments/',
+      defaults: {
+        'ups': 0
+      },
       initialize: function(){
         this.setSize();
         this.on('upVote', this.upVoteHandler, this);
       },
       setSize: function(){
-        this.set('size', 'zero');
+
+        var oldSize = this.get('size') || 'zero';
+
         var ups = this.get('ups');
         if (ups < 5){
           this.set('size', 'small');
@@ -25,6 +30,14 @@ define(function(require){
         else if (ups < 10000000){
           this.set('size', 'big');
         }
+        else {
+          this.set('size', 'none');
+        }
+
+        if (oldSize !== this.get('size')){
+          this.trigger('newSize', oldSize);
+        }
+
       },
       upVoteHandler: function(){
         var currentVote = this.get('ups');
@@ -39,7 +52,6 @@ define(function(require){
           // else
           // do nothing
 
-        console.log('ups will now be: ', newVote);
         this.set('ups', newVote);
         this.setSize();
 
