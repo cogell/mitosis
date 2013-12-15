@@ -66,7 +66,7 @@ define(function(require){
             return model.get('ups') == 0;
           });
           that.trigger('pruning', toRemove);
-        }, 10000)
+        }, 30000)
       },
 
       randomVotes: function(){
