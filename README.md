@@ -13,9 +13,9 @@ node app/main.js
 Most of the functionality is in now rounding out the requirements and adding polish.
 
 ## CSS3
-- animation with keyframes
-- ?
-- ?
+- animating comment opacity, with @keyframes
+- includes google web font 'raleway', with @font-face
+- box-sizing the way the god intended, with boz-sizing
 
 ###
 always be knolling
