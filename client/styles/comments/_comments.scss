@@ -9,22 +9,12 @@
   }
 
   .comments-region{
-    background: url('/img/beautiful_nature.jpg');
+    // background: url('/img/beautiful_nature.jpg');
+    background: white;
     padding-top: 0.1em;
     padding-bottom: 20em;
 
     @import 'comment';
-  }
-
-  .stats-region {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: grey;
-    // padding: 5px;
-    opacity: 0.9;
-
-    @improt 'stats';
   }
 
 }

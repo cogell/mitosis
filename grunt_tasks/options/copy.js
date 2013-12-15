@@ -21,6 +21,7 @@ module.exports = {
         'handlebars/handlebars.js',
         'text/text.js',
         'socket.io-client/dist/socket.io.js',
+        'd3/d3.js',
 
         // nice-to-haves
         'backbone.stickit/backbone.stickit.js',

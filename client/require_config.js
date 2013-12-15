@@ -12,6 +12,7 @@ require.config({
     Handlebars: 'vendor/handlebars/handlebars',
     text: 'vendor/text/text',
     socketio: 'vendor/socket.io-client/dist/socket.io',
+    d3: 'vendor/d3/d3',
 
     // nice-to-haves
     'backbone.stickit': 'vendor/backbone.stickit/backbone.stickit',
@@ -36,6 +37,9 @@ require.config({
     marionette: {
       deps: ['jquery', 'backbone', 'underscore'],
       exports: 'Backbone.Marionette'
+    },
+    d3: {
+      exports: 'd3'
     },
     'backbone.stickit': {
       deps: ['jquery', 'underscore', 'backbone']

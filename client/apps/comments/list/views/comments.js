@@ -47,7 +47,7 @@ define(function(require){
       initPckry: function(){
         this.pckry = new Packery(this.$el[0], {
           itemSelector: '.comment',
-          gutter: 1
+          gutter: 0
         });
       },
       expandController: function(cv, msg){

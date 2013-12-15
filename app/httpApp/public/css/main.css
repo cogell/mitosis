@@ -49,7 +49,7 @@ h1 {
         width: 100%;
         border-radius: 0; }
   #comments .comments-region {
-    background: url('/img/beautiful_nature.jpg');
+    background: white;
     padding-top: 0.1em;
     padding-bottom: 20em; }
     #comments .comments-region .comments-container {
@@ -62,31 +62,50 @@ h1 {
         height: 1em;
         padding: 10px;
         background: #ede8df;
+        color: #232323;
+        border: 1px solid white;
         overflow: hidden;
         text-overflow: ellipsis; }
       #comments .comments-region .comments-container .comment.small {
         font-size: 4em; }
+        #comments .comments-region .comments-container .comment.small .band {
+          border-top: 6px solid grey; }
         #comments .comments-region .comments-container .comment.small .content {
           font-size: 0.08em; }
         #comments .comments-region .comments-container .comment.small .comment-count a.vote:hover {
           color: #232323; }
+        #comments .comments-region .comments-container .comment.small .content.action .plus, #comments .comments-region .comments-container .comment.small .content.action .minus {
+          color: grey; }
       #comments .comments-region .comments-container .comment.medium {
-        font-size: 6em;
-        background: #6aceeb; }
+        font-size: 6em; }
+        #comments .comments-region .comments-container .comment.medium .band {
+          border-top: 6px solid #6aceeb; }
         #comments .comments-region .comments-container .comment.medium .content {
           font-size: 0.08em; }
+        #comments .comments-region .comments-container .comment.medium .comment .comment-count p {
+          color: #6aceeb; }
+        #comments .comments-region .comments-container .comment.medium .content.action .plus, #comments .comments-region .comments-container .comment.medium .content.action .minus {
+          color: #6aceeb; }
       #comments .comments-region .comments-container .comment.large {
-        font-size: 8em;
-        background: #30394f;
-        color: white; }
+        font-size: 8em; }
+        #comments .comments-region .comments-container .comment.large .band {
+          border-top: 6px solid #30394f; }
         #comments .comments-region .comments-container .comment.large .content {
           font-size: 0.09em; }
+        #comments .comments-region .comments-container .comment.large .comment .comment-count p {
+          color: #30394f; }
+        #comments .comments-region .comments-container .comment.large .content.action .plus, #comments .comments-region .comments-container .comment.large .content.action .minus {
+          color: #30394f; }
       #comments .comments-region .comments-container .comment.big {
-        font-size: 10em;
-        background: #ff434c;
-        color: white; }
+        font-size: 10em; }
+        #comments .comments-region .comments-container .comment.big .band {
+          border-top: 6px solid #ff434c; }
         #comments .comments-region .comments-container .comment.big .content {
           font-size: 0.0625em; }
+        #comments .comments-region .comments-container .comment.big .comment .comment-count p {
+          color: #ff434c; }
+        #comments .comments-region .comments-container .comment.big .content.action .plus, #comments .comments-region .comments-container .comment.big .content.action .minus {
+          color: #ff434c; }
       #comments .comments-region .comments-container .comment .content {
         font-size: 0.125em; }
       #comments .comments-region .comments-container .comment .comment-text {
@@ -105,6 +124,9 @@ h1 {
           position: absolute;
           bottom: 10px;
           right: 10px; }
+      #comments .comments-region .comments-container .comment .tooltip {
+        width: 100px;
+        z-index: 9999; }
       #comments .comments-region .comments-container .comment .comment-count {
         position: absolute;
         bottom: 10px; }
@@ -120,10 +142,7 @@ h1 {
             color: grey;
             font-size: 0.8em; }
             #comments .comments-region .comments-container .comment .comment-count .wrapper a:hover {
-              color: white; }
-      #comments .comments-region .comments-container .tooltip {
-        width: 100px;
-        z-index: 9999; }
+              color: #232323; }
       #comments .comments-region .comments-container .comment.animate {
         -webkit-animation: up-vote 1s ease-out;
         -moz-animation: up-vote 1s ease-out;
@@ -137,18 +156,62 @@ h1 {
           display: inline-block; }
         #comments .comments-region .comments-container .comment.expanded .action .plus {
           display: none; }
-      #comments .comments-region .comments-container .chatroom-container {
+        #comments .comments-region .comments-container .comment.expanded .content {
+          height: auto;
+          font-size: 1em; }
+      #comments .comments-region .comments-container .stats-region {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: grey;
+        opacity: 0.9;
+        height: 0.8em;
+        overflow: hidden; }
+        #comments .comments-region .comments-container .stats-region path {
+          stroke: steelblue;
+          stroke-width: 1;
+          fill: none; }
+        #comments .comments-region .comments-container .stats-region .axis {
+          shape-rendering: crispEdges; }
+        #comments .comments-region .comments-container .stats-region .x.axis line {
+          stroke: lightgrey; }
+        #comments .comments-region .comments-container .stats-region .x.axis .minor {
+          stroke-opacity: 0.5; }
+        #comments .comments-region .comments-container .stats-region .x.axis path {
+          display: none; }
+        #comments .comments-region .comments-container .stats-region .y.axis line, #comments .comments-region .comments-container .stats-region .y.axis path {
+          fill: none;
+          stroke: black; }
+      #comments .comments-region .comments-container .chatroom-region {
         overflow-y: auto;
         font-size: 1rem;
         background: white;
         color: #232323; }
-  #comments .stats-region {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: grey;
-    opacity: 0.9;
-    @improt 'stats'; }
+        #comments .comments-region .comments-container .chatroom-region .messages {
+          overflow-y: auto;
+          height: 10em;
+          background: white;
+          color: #232323; }
+          #comments .comments-region .comments-container .chatroom-region .messages .row {
+            margin: 0; }
+        #comments .comments-region .comments-container .chatroom-region .new-message.row .new-form {
+          overflow: hidden; }
+        #comments .comments-region .comments-container .chatroom-region .new-message.row label.new-message {
+          width: 79%;
+          float: left;
+          margin-right: 3px; }
+          #comments .comments-region .comments-container .chatroom-region .new-message.row label.new-message textarea {
+            resize: none;
+            outline: none;
+            overflow: auto;
+            border-radius: 0;
+            font-size: 1.5em;
+            padding: 5px 10px; }
+        #comments .comments-region .comments-container .chatroom-region .new-message.row .submit {
+          width: 20%;
+          border-radius: 0;
+          height: 50px;
+          margin-top: 39px; }
 
 @-webkit-keyframes up-vote {
   0% {

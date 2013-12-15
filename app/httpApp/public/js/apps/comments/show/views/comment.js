@@ -36,6 +36,7 @@ define(function(require){
       expandClicked: function(e){
         e.preventDefault();
         this.trigger('expandClicked');
+        this.trigger('statsHide');
       },
       shrinkClicked: function(e){
         e.preventDefault();
@@ -44,6 +45,7 @@ define(function(require){
       voteClicked: function(e){
         e.preventDefault();
         this.trigger('voteClicked');
+        this.trigger('statsHide');
       },
       statsClicked: function(e){
         e.preventDefault();

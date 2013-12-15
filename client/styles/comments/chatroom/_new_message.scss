@@ -1,0 +1,29 @@
+.new-message.row {
+
+  .new-form {
+    overflow: hidden;
+  }
+
+  label.new-message{
+    width: 79%;
+    float: left;
+    margin-right: 3px;
+
+    textarea {
+      resize: none;   // remove the resize handle
+      outline: none;  // remove that focus blue
+      overflow: auto; // remove scroll bars on IE
+      border-radius: 0;
+
+      font-size: 1.5em;
+      padding: 5px 10px;
+    }
+  }
+  .submit {
+    width: 20%;
+    border-radius: 0;
+    height: 50px;
+    margin-top: 39px;
+  }
+
+}
