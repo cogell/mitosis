@@ -1,6 +1,8 @@
 define(function(require){
 
   var App = require('app');
+  require('apps/comments/show/views/comment');
+
   var packeryPkg = require('packeryPkg');
   var Packery = require('packery');
 
