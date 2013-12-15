@@ -11,7 +11,8 @@ define(function(require){
       className: 'comments',
       regions: {
         newCommentRegion: '#new-comment-region',
-        commentsRegion: '.comments-region'
+        commentsRegion: '.comments-region',
+        mapRegion: '#map-region'
       }
 
     });

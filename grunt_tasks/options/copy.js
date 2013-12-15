@@ -22,6 +22,7 @@ module.exports = {
         'text/text.js',
         'socket.io-client/dist/socket.io.js',
         'd3/d3.js',
+        'topojson/topojson.js',
 
         // nice-to-haves
         'backbone.stickit/backbone.stickit.js',

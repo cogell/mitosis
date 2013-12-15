@@ -1,16 +1,20 @@
 define(function(require){
 
   var App = require('app');
+  require('Handlebars');
   require('apps/comments/show/views/comment');
+  var _comments = require('text!apps/comments/list/templates/comments.html');
 
   var packeryPkg = require('packeryPkg');
   var Packery = require('packery');
 
   return App.module('Comments.List', function(List){
 
-    List.Comments = Marionette.CollectionView.extend({
-      // itemView: List.CommentLayout,
+    List.Comments = Marionette.CompositeView.extend({
+
+      template: Handlebars.compile( _comments ),
       itemView: App.Comments.Show.Comment,
+      itemViewContainer: '.comments-container',
 
       // override the collectionview buildItemView function to call out to the App for proper comment creation
       buildItemView: function(item, ItemViewType, itemViewOptions){
@@ -19,12 +23,17 @@ define(function(require){
         return view;
       },
 
-      className: 'comments-container',
+      className: 'comments',
+      events: {
+        'click .js-map': 'mapClicked'
+      },
 
       initialize: function(){
         this.on('itemview:expand', this.expandController, this);
         this.on('itemview:shrink', this.shrinkController, this);
         this.on('itemview:resize', this.resizeController, this);
+
+        this.on('mapclosed', this.mapclosed, this);
 
         // Stubbing in interactions
         this.pruneLowComments();
@@ -88,8 +97,21 @@ define(function(require){
         } else {
           this.toolHoverCount ++;
         }
-      }
+      },
 
+      mapClicked: function(e){
+        e.preventDefault();
+        if (!this.statsShown){
+          this.mapShown = true;
+          this.trigger('mapShow');
+        } else {
+          this.mapShown = false;
+          this.trigger('mapHide');
+        }
+      },
+      mapclosed: function(){
+        this.statsShown = false;
+      }
 
     })
 

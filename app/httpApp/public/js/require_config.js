@@ -13,6 +13,7 @@ require.config({
     text: 'vendor/text/text',
     socketio: 'vendor/socket.io-client/dist/socket.io',
     d3: 'vendor/d3/d3',
+    topojson: 'vendor/topojson/topojson',
 
     // nice-to-haves
     'backbone.stickit': 'vendor/backbone.stickit/backbone.stickit',
@@ -40,6 +41,9 @@ require.config({
     },
     d3: {
       exports: 'd3'
+    },
+    topojson: {
+      exports: 'topojson'
     },
     'backbone.stickit': {
       deps: ['jquery', 'underscore', 'backbone']

@@ -10,11 +10,29 @@
 
   .comments-region{
     // background: url('/img/beautiful_nature.jpg');
+    position: relative;
     background: white;
     padding-top: 0.1em;
     padding-bottom: 20em;
 
-    @import 'comment';
+    .comments {
+      .icons-wrapper {
+        position: absolute;
+        top: -30px;
+        right: 10px;
+        font-size: 2em;
+      }
+      .comments-container{
+        width: 100%;
+        font-size: 3rem;
+
+        @import 'comment';
+      }
+    }
+
   }
+
+  // Comments Stats styles
+  @import 'map';
 
 }

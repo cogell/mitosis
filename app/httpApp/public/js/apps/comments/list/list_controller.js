@@ -4,6 +4,7 @@ define(function(require){
   require('apps/comments/list/views/comments');
   require('apps/comments/list/views/comments_layout');
   require('apps/comments/list/views/new_comment');
+  require('apps/comments/list/views/map');
 
   return App.module('Comments.List', function(List){
 
@@ -31,14 +32,27 @@ define(function(require){
 
             commentsView = new List.Comments({
               collection: comments
-            })
+            });
 
             controller.layout.on('show', function(){
               this.newCommentRegion.show( newComment );
               this.commentsRegion.show( commentsView );
             });
 
-            newComment.on('comment:submit', controller.newCommentSubmited)
+            newComment.on('comment:submit', controller.newCommentSubmited);
+
+            commentsView.on('mapShow', function(){
+              var map = new List.Map();
+              controller.layout.mapRegion.show( map );
+              map.on('close', function(){
+                controller.layout.mapRegion.close();
+                commentsView.trigger('mapclosed');
+              });
+            });
+
+            commentsView.on('mapHide', function(){
+              controller.layout.mapRegion.close();
+            });
 
             commentsView.on('itemview:expand', function(v, msg){
               var context = this;

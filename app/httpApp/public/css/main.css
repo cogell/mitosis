@@ -49,13 +49,19 @@ h1 {
         width: 100%;
         border-radius: 0; }
   #comments .comments-region {
+    position: relative;
     background: white;
     padding-top: 0.1em;
     padding-bottom: 20em; }
-    #comments .comments-region .comments-container {
+    #comments .comments-region .comments .icons-wrapper {
+      position: absolute;
+      top: -30px;
+      right: 10px;
+      font-size: 2em; }
+    #comments .comments-region .comments .comments-container {
       width: 100%;
       font-size: 3rem; }
-      #comments .comments-region .comments-container .comment {
+      #comments .comments-region .comments .comments-container .comment {
         position: relative;
         font-size: 4em;
         width: 1em;
@@ -66,170 +72,182 @@ h1 {
         border: 1px solid white;
         overflow: hidden;
         text-overflow: ellipsis; }
-      #comments .comments-region .comments-container .comment.small {
+      #comments .comments-region .comments .comments-container .comment.small {
         font-size: 4em; }
-        #comments .comments-region .comments-container .comment.small .band {
+        #comments .comments-region .comments .comments-container .comment.small .band {
           border-top: 6px solid grey; }
-        #comments .comments-region .comments-container .comment.small .content {
+        #comments .comments-region .comments .comments-container .comment.small .content {
           font-size: 0.08em; }
-        #comments .comments-region .comments-container .comment.small .comment-count a.vote:hover {
+        #comments .comments-region .comments .comments-container .comment.small .comment-count a.vote:hover {
           color: #232323; }
-        #comments .comments-region .comments-container .comment.small .content.action .plus, #comments .comments-region .comments-container .comment.small .content.action .minus {
+        #comments .comments-region .comments .comments-container .comment.small .content.action .plus, #comments .comments-region .comments .comments-container .comment.small .content.action .minus {
           color: grey; }
-      #comments .comments-region .comments-container .comment.medium {
+      #comments .comments-region .comments .comments-container .comment.medium {
         font-size: 6em; }
-        #comments .comments-region .comments-container .comment.medium .band {
+        #comments .comments-region .comments .comments-container .comment.medium .band {
           border-top: 6px solid #6aceeb; }
-        #comments .comments-region .comments-container .comment.medium .content {
+        #comments .comments-region .comments .comments-container .comment.medium .content {
           font-size: 0.08em; }
-        #comments .comments-region .comments-container .comment.medium .comment .comment-count p {
+        #comments .comments-region .comments .comments-container .comment.medium .comment .comment-count p {
           color: #6aceeb; }
-        #comments .comments-region .comments-container .comment.medium .content.action .plus, #comments .comments-region .comments-container .comment.medium .content.action .minus {
+        #comments .comments-region .comments .comments-container .comment.medium .content.action .plus, #comments .comments-region .comments .comments-container .comment.medium .content.action .minus {
           color: #6aceeb; }
-      #comments .comments-region .comments-container .comment.large {
+      #comments .comments-region .comments .comments-container .comment.large {
         font-size: 8em; }
-        #comments .comments-region .comments-container .comment.large .band {
+        #comments .comments-region .comments .comments-container .comment.large .band {
           border-top: 6px solid #30394f; }
-        #comments .comments-region .comments-container .comment.large .content {
+        #comments .comments-region .comments .comments-container .comment.large .content {
           font-size: 0.09em; }
-        #comments .comments-region .comments-container .comment.large .comment .comment-count p {
+        #comments .comments-region .comments .comments-container .comment.large .comment .comment-count p {
           color: #30394f; }
-        #comments .comments-region .comments-container .comment.large .content.action .plus, #comments .comments-region .comments-container .comment.large .content.action .minus {
+        #comments .comments-region .comments .comments-container .comment.large .content.action .plus, #comments .comments-region .comments .comments-container .comment.large .content.action .minus {
           color: #30394f; }
-      #comments .comments-region .comments-container .comment.big {
+      #comments .comments-region .comments .comments-container .comment.big {
         font-size: 10em; }
-        #comments .comments-region .comments-container .comment.big .band {
+        #comments .comments-region .comments .comments-container .comment.big .band {
           border-top: 6px solid #ff434c; }
-        #comments .comments-region .comments-container .comment.big .content {
+        #comments .comments-region .comments .comments-container .comment.big .content {
           font-size: 0.0625em; }
-        #comments .comments-region .comments-container .comment.big .comment .comment-count p {
+        #comments .comments-region .comments .comments-container .comment.big .comment .comment-count p {
           color: #ff434c; }
-        #comments .comments-region .comments-container .comment.big .content.action .plus, #comments .comments-region .comments-container .comment.big .content.action .minus {
+        #comments .comments-region .comments .comments-container .comment.big .content.action .plus, #comments .comments-region .comments .comments-container .comment.big .content.action .minus {
           color: #ff434c; }
-      #comments .comments-region .comments-container .comment .content {
+      #comments .comments-region .comments .comments-container .comment .content {
         font-size: 0.125em; }
-      #comments .comments-region .comments-container .comment .comment-text {
+      #comments .comments-region .comments .comments-container .comment .comment-text {
         height: 10em; }
-        #comments .comments-region .comments-container .comment .comment-text p {
+        #comments .comments-region .comments .comments-container .comment .comment-text p {
           overflow: hidden;
           text-overflow: ellipsis; }
-      #comments .comments-region .comments-container .comment .action {
+      #comments .comments-region .comments .comments-container .comment .action {
         cursor: pointer; }
-        #comments .comments-region .comments-container .comment .action .minus {
+        #comments .comments-region .comments .comments-container .comment .action .minus {
           position: absolute;
           top: 15px;
           right: 10px;
           display: none; }
-        #comments .comments-region .comments-container .comment .action .plus {
+        #comments .comments-region .comments .comments-container .comment .action .plus {
           position: absolute;
           bottom: 10px;
           right: 10px; }
-      #comments .comments-region .comments-container .comment .tooltip {
-        width: 100px;
-        z-index: 9999; }
-      #comments .comments-region .comments-container .comment .comment-count {
+      #comments .comments-region .comments .comments-container .comment .tooltip {
+        width: 80px;
+        z-index: 999; }
+      #comments .comments-region .comments .comments-container .comment .comment-count {
         position: absolute;
         bottom: 10px; }
-        #comments .comments-region .comments-container .comment .comment-count .wrapper {
+        #comments .comments-region .comments .comments-container .comment .comment-count .wrapper {
           float: left;
           margin-right: 10px; }
-          #comments .comments-region .comments-container .comment .comment-count .wrapper p {
+          #comments .comments-region .comments .comments-container .comment .comment-count .wrapper p {
             font-size: 0.8em;
             float: left;
             margin: 0 4px 0 0; }
-          #comments .comments-region .comments-container .comment .comment-count .wrapper a {
+          #comments .comments-region .comments .comments-container .comment .comment-count .wrapper a {
             float: left;
             color: grey;
             font-size: 0.8em; }
-            #comments .comments-region .comments-container .comment .comment-count .wrapper a:hover {
+            #comments .comments-region .comments .comments-container .comment .comment-count .wrapper a:hover {
               color: #232323; }
-      #comments .comments-region .comments-container .comment.animate {
+      #comments .comments-region .comments .comments-container .comment.animate {
         -webkit-animation: up-vote 1s ease-out;
         -moz-animation: up-vote 1s ease-out;
         -o-animation: up-vote 1s ease-out;
         animation: up-vote 1s ease-out; }
-      #comments .comments-region .comments-container .comment.expanded {
+      #comments .comments-region .comments .comments-container .comment.expanded {
         font-size: 2rem;
         width: 100%;
         height: 500px; }
-        #comments .comments-region .comments-container .comment.expanded .content {
+        #comments .comments-region .comments .comments-container .comment.expanded .content {
           height: auto;
           font-size: 1em; }
-        #comments .comments-region .comments-container .comment.expanded .wrapper a.people {
+        #comments .comments-region .comments .comments-container .comment.expanded .wrapper a.people {
           pointer-events: none;
           color: white; }
-        #comments .comments-region .comments-container .comment.expanded .action .minus {
+        #comments .comments-region .comments .comments-container .comment.expanded .action .minus {
           display: inline-block; }
-        #comments .comments-region .comments-container .comment.expanded .action .plus {
+        #comments .comments-region .comments .comments-container .comment.expanded .action .plus {
           display: none; }
-      #comments .comments-region .comments-container .stats-region {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: grey;
-        opacity: 0.9;
-        height: 0.8em;
-        overflow: hidden; }
-        #comments .comments-region .comments-container .stats-region path {
-          stroke: steelblue;
-          stroke-width: 1;
-          fill: none; }
-        #comments .comments-region .comments-container .stats-region .axis {
-          shape-rendering: crispEdges; }
-        #comments .comments-region .comments-container .stats-region .x.axis line {
-          stroke: lightgrey; }
-        #comments .comments-region .comments-container .stats-region .x.axis .minor {
-          stroke-opacity: 0.5; }
-        #comments .comments-region .comments-container .stats-region .x.axis path {
-          display: none; }
-        #comments .comments-region .comments-container .stats-region .y.axis line, #comments .comments-region .comments-container .stats-region .y.axis path {
-          fill: none;
-          stroke: black; }
-      #comments .comments-region .comments-container .chatroom-region .messages-container {
+      #comments .comments-region .comments .comments-container .chatroom-region .messages-container {
         font-size: 1rem;
         overflow-y: auto;
         padding: 20px;
         color: #232323;
         background: white;
         border: 1px solid grey; }
-        #comments .comments-region .comments-container .chatroom-region .messages-container .messages {
+        #comments .comments-region .comments .comments-container .chatroom-region .messages-container .messages {
           overflow-y: auto;
           height: 23em;
           background: white;
           color: #232323; }
-          #comments .comments-region .comments-container .chatroom-region .messages-container .messages .message {
+          #comments .comments-region .comments .comments-container .chatroom-region .messages-container .messages .message {
             font-size: 1.5em;
             border-bottom: 1px solid rgba(0, 0, 0, 0.2);
             padding: 10px;
             margin-bottom: 10px; }
-            #comments .comments-region .comments-container .chatroom-region .messages-container .messages .message .message-user {
+            #comments .comments-region .comments .comments-container .chatroom-region .messages-container .messages .message .message-user {
               font-weight: 500; }
-        #comments .comments-region .comments-container .chatroom-region .messages-container .new-message .new-form {
+        #comments .comments-region .comments .comments-container .chatroom-region .messages-container .new-message .new-form {
           overflow: hidden; }
-        #comments .comments-region .comments-container .chatroom-region .messages-container .new-message label.new-message {
+        #comments .comments-region .comments .comments-container .chatroom-region .messages-container .new-message label.new-message {
           width: 79%;
           float: left;
           margin-right: 3px; }
-          #comments .comments-region .comments-container .chatroom-region .messages-container .new-message label.new-message textarea {
+          #comments .comments-region .comments .comments-container .chatroom-region .messages-container .new-message label.new-message textarea {
             resize: none;
             outline: none;
             overflow: auto;
             border-radius: 0;
             font-size: 1.5em;
             padding: 5px 10px; }
-        #comments .comments-region .comments-container .chatroom-region .messages-container .new-message .submit {
+        #comments .comments-region .comments .comments-container .chatroom-region .messages-container .new-message .submit {
           width: 20%;
           border-radius: 0;
           height: 50px;
           margin-top: 39px; }
-      #comments .comments-region .comments-container .comment.small .chatroom-region .messages-container {
+      #comments .comments-region .comments .comments-container .comment.small .chatroom-region .messages-container {
         border: 1px solid grey; }
-      #comments .comments-region .comments-container .comment.medium .chatroom-region .messages-container {
+      #comments .comments-region .comments .comments-container .comment.medium .chatroom-region .messages-container {
         border: 1px solid #6aceeb; }
-      #comments .comments-region .comments-container .comment.large .chatroom-region .messages-container {
+      #comments .comments-region .comments .comments-container .comment.large .chatroom-region .messages-container {
         border: 1px solid #30394f; }
-      #comments .comments-region .comments-container .comment.big .chatroom-region .messages-container {
+      #comments .comments-region .comments .comments-container .comment.big .chatroom-region .messages-container {
         border: 1px solid #ff434c; }
+  #comments #map-region {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #252525;
+    opacity: 0.9;
+    width: 100%; }
+    #comments #map-region .action {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 3.4em; }
+      #comments #map-region .action a {
+        color: white; }
+    #comments #map-region path {
+      stroke: white;
+      stroke-width: 1;
+      fill: none; }
+    #comments #map-region .region {
+      opacity: 0.6;
+      cursor: pointer;
+      fill: #6f6f6f;
+      stroke: #464646;
+      stroke-width: 0.5;
+      stroke-linecap: round;
+      -moz-transition: opacity 300ms ease-out, fill 300ms ease-out, stroke 300ms ease-out;
+      -webkit-transition: opacity 300ms ease-out, fill 300ms ease-out, stroke 300ms ease-out;
+      -o-transition: opacity 300ms ease-out, fill 300ms ease-out, stroke 300ms ease-out;
+      transition: opacity 300ms ease-out, fill 300ms ease-out, stroke 300ms ease-out; }
+      #comments #map-region .region.hover, #comments #map-region .region.active {
+        opacity: 1;
+        stroke: #5f5f5f; }
+      #comments #map-region .region.active {
+        fill: #e76b28;
+        stroke: #d35f20; }
 
 @-webkit-keyframes up-vote {
   0% {
