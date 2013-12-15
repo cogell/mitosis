@@ -7,7 +7,7 @@ define(function(require){
 
     Show.Message = Marionette.ItemView.extend({
       template: Handlebars.compile( _message ),
-      className: 'row'
+      className: 'message'
     })
 
   });

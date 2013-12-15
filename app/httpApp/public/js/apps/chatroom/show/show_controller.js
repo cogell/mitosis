@@ -28,30 +28,27 @@ define(function(require){
       },
       setHandlers: function( layout, newMessage, id ){
         var controller = this;
-        // var newMessage = newMessage;
 
         layout.on('render:newMessage', function(){
-          console.log('show new message');
 
           this.newMessageRegion.show( newMessage );
 
           newMessage.on('message:submit', controller.newMessageSubmited);
 
           App.on('socket:newMessage', function(message){
-              console.log('Chatroom controller recieved...');
-              console.log('message: ', message);
               controller.collection.add(message);
-            });
+          });
 
         });
 
-        layout.on('render:messages', function(id){
-          console.log('show messages');
+
+        layout.on('render:messages', function(){
 
           var fetchingMessages = App.request('entities:messages', id);
 
           $.when(fetchingMessages).done(function(messages){
             var messagesView;
+            var chatId;
 
             if (messages !== undefined){
               controller.collection = messages;
@@ -60,8 +57,7 @@ define(function(require){
               });
             }
             else {
-              controller.collection = [];
-              // handle the case where there are no messages
+              //handle the case where the entities app returns no messages
             }
 
             App.trigger('comment:openChat', App.Socket.clientId, controller.chatId);

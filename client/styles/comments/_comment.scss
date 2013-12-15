@@ -73,7 +73,7 @@
       cursor: pointer;
       .minus {
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: 10px;
         display: none;
       }
@@ -120,14 +120,18 @@
   .comment.expanded{
     font-size: 2rem;
     width: 100%;
-    height: 400px;
-    .action {
-      .minus{ display: inline-block; }
-      .plus{ display: none; }
-    }
+    height: 500px;
     .content{
       height: auto;
       font-size: 1em;
+    }
+    .wrapper a.people {
+      pointer-events: none;
+      color: white;
+    }
+    .action {
+      .minus{ display: inline-block; }
+      .plus{ display: none; }
     }
   }
 

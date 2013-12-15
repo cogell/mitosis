@@ -7,7 +7,7 @@ define(function(require){
   return App.module('Chatroom.Show', function(Show){
     Show.Chatroom = Marionette.Layout.extend({
       template: Handlebars.compile( _chatroomLayout ),
-      className: 'container',
+      className: 'messages-container',
       regions: {
         messagesRegion: '.messages',
         newMessageRegion: '.new-message'

@@ -32,7 +32,9 @@ define(function(require){
 
         comment.on('expandClicked', function(){
 
-          controller.chatroom = App.request('chatroom:show', 1);
+          var chatId = this.model.get('chatId') || -1;
+
+          controller.chatroom = App.request('chatroom:show', chatId);
           layout.trigger('expand');
           layout.chatroomRegion.show( controller.chatroom );
 

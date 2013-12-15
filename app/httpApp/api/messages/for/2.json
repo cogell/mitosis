@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "body": "Consectetur aute swag, eiusmod chillwave forage post-ironic ut. Hoodie brunch XOXO, 90's Godard reprehenderit disrupt Wes Anderson kitsch",
+    "user": "Arden Vivian",
+    "chatId": 1
+  },
+  {
+    "id": 2,
+    "body": "McSweeney's narwhal next level stumptown excepteur small batch pug, banh mi hashtag. Fashion axe aliquip assumenda semiotics nostrud scenester",
+    "user": "Ash Rowan",
+    "chatId": 1
+  },
+  {
+    "id": 3,
+    "body": "Heniam do High Life Schlitz nostrud, est nisi ullamco Terry Richardson shabby chic nesciunt stumptown kogi Blue Bottle. Consectetur sustainable",
+    "user": "Meredith Montana",
+    "chatId": 1
+  }
+]
