@@ -12,10 +12,18 @@ define(function(require){
         messagesRegion: '.messages',
         newMessageRegion: '.new-message'
       },
+      initialize: function(){
+        this.on('scrollDown', this.scrollDown, this);
+      },
       onShow: function(e){
         this.trigger('render:messages');
         this.trigger('render:newMessage');
+        this.scrollDown();
+      },
+      scrollDown: function(){
+        this.$el.find('.messages').scrollTop(100000000000);
       }
+
     })
   });
 

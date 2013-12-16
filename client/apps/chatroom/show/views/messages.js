@@ -6,7 +6,10 @@ define(function(require){
   return App.module('Chatroom.Show', function(Show){
 
     Show.Messages = Marionette.CollectionView.extend({
-      itemView: Show.Message
+      itemView: Show.Message,
+      onAfterItemAdded: function(){
+        this.trigger('itemAdded');
+      }
     })
 
   });

@@ -55,10 +55,15 @@ define(function(require){
               messagesView = new Show.Messages({
                 collection: messages
               });
+
             }
             else {
               //handle the case where the entities app returns no messages
             }
+
+            messagesView.on('itemAdded', function(){
+              controller.layout.trigger('scrollDown');
+            });
 
             App.trigger('comment:openChat', App.Socket.clientId, controller.chatId);
 
