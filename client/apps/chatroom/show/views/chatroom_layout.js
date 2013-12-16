@@ -21,6 +21,7 @@ define(function(require){
         this.scrollDown();
       },
       scrollDown: function(){
+        // quick hack
         this.$el.find('.messages').scrollTop(100000000000);
       }
 
